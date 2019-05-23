@@ -14,12 +14,12 @@ var dataFile = 'pug/json/config.json';
 gulp.task('sass', function () {
   return gulp.src('assets/sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('assets/css'));
+    .pipe(gulp.dest('./dist/assets/css'));
 });
 
 gulp.task('cleancss', function () {
   return gulp
-  			.src(['assets/css/global.css', '*.php'])
+  			.src(['./dist/assets/css/global.css', '*.php'])
   			.pipe( checkCSS() );
 
 });
@@ -37,9 +37,9 @@ gulp.task('pug', function(){
 	    "pretty": true
 	  }))
 	  .pipe( rename( function( path ){
-	  		path.extname = ".php"
+	  		path.extname = ".html"
 	  }))
-	  .pipe(gulp.dest(""));
+	  .pipe(gulp.dest("./dist/"));
 });
 
 

@@ -1,0 +1,159 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      "assets/js/owlcarousel/dist/assets/owl.carousel.min.css",
+      "assets/js/owlcarousel/dist/assets/owl.theme.default.css"
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block append script
+  -
+    var js = [
+      "assets/js/owlcarousel/dist/owl.carousel.min.js",
+      "assets/js/news.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container
+        .row.mt-sm.mb-lg
+          |
+          |
+          // start left column
+          .col-md-3
+            |
+            |
+            h4.text_head--h4.mb-sm 
+              i.fa.fa-file-text-o 
+              |  ประเภท
+            ul.sidesubmenu
+              li
+                a(href="magazine.php") นิตยสาร
+              li.active
+                a(href="news.php") ข่าวสาร
+              li
+                a(href="article.php") บทความ
+              li
+                a(href="event.php") อีเวนท์
+              li
+                a(href="promotion.php") โปรโมชั่น
+            .mt-xs.text-center
+              a(href="#")
+                img(src="http://placehold.it/240x400")
+            .mt-xs.text-center
+              a(href="#")
+                img(src="http://placehold.it/240x400")
+          // end left column
+          |
+          |
+          |
+          // start right column
+          .col-md-9
+            .container-fluid
+              .row
+                .col-md-12
+                  // slideshow
+                  .owl-carousel.owl-theme
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+              
+              .row
+                .col-md-12
+                  h4.text_head--h4.mb-sm 
+                    i.fa.fa-star 
+                    |  ข่าวสารแนะนำ
+              .row
+                  - var n = 0
+                  while n < 3
+                    // start news, 1 item
+                    .col-md-4.course
+                      .course-img
+                        img(src="assets/img/img-test.jpg")
+                      a.course-title(href="news_detail.php") โครงการศุภาลัย มีการปรับราคาบ้านเดี่ยว เพื่อตอบรับกระแสของความต้องการที่มีมากขึ้น
+                      .divide-line
+                      .course-date โพสเมื่อวัน 12/01/2560 เข้าชมแล้ว 1,420 ครั้ง
+                    - n++
+
+              .row
+                .col-md-12
+                  .divide-line
+
+              .row.form.form-horizontal.mt-sm
+                |
+                |
+                .col-md-3
+                  h4.text_head--h4.mb-sm 
+                    |  ข่าวสาร
+                // start filter section
+                .col-md-3.text-right
+                  .form-group
+                      label.col-md-12.control-label ค้นหาจาก
+                .col-md-3
+                    input(type="text", class="form-control", placeholder="หัวข้อ/รายละเอียด")
+                .col-md-3
+                  <div class="filter-wrapper">
+                    <select name="select-type" id="select-type" class="form-control">
+                      <option value="">จังหวัด</option>
+                      <option value="">กรุงเทพฯ</option>
+                      <option value="">นนทบุรี</option>
+                    </select>
+                  </div>
+
+              .row
+                  - var n = 0
+                  while n < 3
+                    // start news, 1 item
+                    .col-md-4.course
+                      .course-img
+                        img(src="assets/img/img-test.jpg")
+                      a.course-title(href="news_detail.php") โครงการศุภาลัย มีการปรับราคาบ้านเดี่ยว เพื่อตอบรับกระแสของความต้องการที่มีมากขึ้น
+                      .divide-line
+                      .course-date โพสเมื่อวัน 12/01/2560 เข้าชมแล้ว 1,420 ครั้ง
+                    - n++
+
+                    // end news, 1 item
+              |
+              |
+              .row.mb-lg
+                |
+                |
+                // start pagination section
+                ul.pagination-list
+                  <li><a href="#"><<</a></li>
+                  <li><a href="#"><</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">>></a></li>
+                  <li><a href="#">></a></li>
+                // end pagination section
+                |
+                |
+              .row
+                .col-xs-12.text-center
+                  a(href="#")
+                    img(src="http://placehold.it/728x90")
+
+          // end right column
+          |
+          |
+            
+
+
+
+
+      
+

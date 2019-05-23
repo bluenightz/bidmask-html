@@ -1,0 +1,170 @@
+extends /template/basic-list-article.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container
+        .row.mt-sm.mb-sm
+          .col-md-10.asset-tab-wrapper
+            |
+            |
+            // start tab section
+            ul.asset-tab
+              li.active
+                a(href="#") Live
+              li
+                a(href="#") Online
+              li
+                a(href="#") Live ตอนนี้
+              li
+                a(href="#") Online ตอนนี้
+            // end tab section
+            |
+            |
+          .col-md-2
+            .row
+              |
+              |
+              // start filter section
+              <div class="filter-wrapper col-md-12">
+                <select name="select-type" id="select-type" class="form-control">
+                  <option value="">เรียงลำดับ</option>
+                  <option value="">ราคาน้อยไปมาก</option>
+                  <option value="">ราคามากไปน้อย</option>
+                </select>
+              </div>
+              // end filter section
+              |
+              |
+
+        .row
+          .col-md-12
+            .row
+
+              - 
+                var data = [
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"News"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Announcement"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"Interview"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Opinions"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"News"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Announcement"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"Interview"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Opinions"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"News"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Announcement"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"Interview"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Opinions"
+                    }
+                ]
+
+              each val, index in data
+                |
+                |
+                // start asset, 1 item
+                .col-sm-3.course
+                  .course-img
+                    img(src=val.img)
+                    span.course-fav
+                      i.fa.fa-star
+                  a.course-title(href="asset_detail.php") โครงการบ้านเดี่ยว ศุภาลัย กาญจนาภิเษก
+                    span.icon-live.icon-live-xs LIVE
+                  .course-date วันที่เริ่มต้น 25/06/60 - วันที่สิ้นสุด 30/08/60
+                  .container-fluid
+                    .row.row-price
+                      .col-xs-6.course-price ราคาเปิดประมูล <br><span>11,000,000</span> บาท
+                      .col-xs-6.course-price ราคาประเมิน <br><span>12,0000,000</span> บาท
+                    .row
+                      .col-xs-12.course-price.text-red-2 ราคาประมูลตอนนี้ <br><span>12,3000,000</span> บาท
+                  a.readmore(href="asset_detail.php") ซื้อบัตรร่วมประมูล
+                // end asset, 1 item
+                |
+                |
+
+            .row.mb-lg
+              |
+              |
+              // start pagination section
+              ul.pagination-list
+                <li><a href="asset.php"><<</a></li>
+                <li><a href="asset.php"><</a></li>
+                <li class="active"><a href="asset.php">1</a></li>
+                <li><a href="asset.php">2</a></li>
+                <li><a href="asset.php">3</a></li>
+                <li><a href="asset.php">>></a></li>
+                <li><a href="asset.php">></a></li>
+              // end pagination section
+              |
+              |
+
+
+
+
+      
+

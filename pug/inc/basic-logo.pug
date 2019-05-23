@@ -1,0 +1,12 @@
+.container-fluid
+	.row
+		.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.col-lg-6.col-lg-offset-3.text-center
+			.logo
+				div.searchwrapper
+					form(action="search.php", method="POST")
+						input.search(type="text", placeholder="ค้นหาคอร์ส เช่น ตรีโกณมิติ, เลขยกกำลัง...")
+						button.searchbtn
+							i.fa.fa-search
+					.logo-desc
+						span
+							img(src="assets/img/search-desc.png")

@@ -1,0 +1,103 @@
+.logo-wrapper {
+  margin-top: 15px; }
+
+.navbar-nav {
+  margin-left: 0px;
+  margin-right: 0px; }
+
+.asset__price--beginner:before {
+  width: 50px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  right: -1px; }
+
+.asset__price--beginner .text__white {
+  margin-top: 10px; }
+
+.asset__price--beginner, .asset__price--other {
+  height: 70px; }
+
+.list__badge {
+  margin-bottom: 50px; }
+
+.list__assetHilight li {
+  margin-bottom: 50px; }
+
+.assetdesc-wrapper {
+  padding-left: 72px; }
+
+.asset_maintitle {
+  position: relative; }
+
+.course .divide-line {
+  margin: 15px 0 5px 0; }
+
+.avatar .avatar-wrapper {
+  min-height: unset; }
+  .avatar .avatar-wrapper img {
+    position: relative; }
+
+.avatar ul.avatar-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 72px;
+  position: absolute;
+  right: -72px;
+  top: 0; }
+  .avatar ul.avatar-list img {
+    position: relative; }
+  .avatar ul.avatar-list li {
+    flex-grow: 1; }
+
+.radar-chart {
+  margin-top: 0; }
+
+.qrcode-2 {
+  display: block; }
+
+.btn.btn-lg {
+  line-height: 24px !important; }
+
+.profile__nav a, .profile__nav--img a {
+  border-left: 2px solid #efefef; }
+
+.profile__nav--img a {
+  border: 0; }
+
+.profile__nav--section {
+  background-color: transparent;
+  margin-top: 0; }
+  .profile__nav--section a {
+    color: #3c92c9 !important; }
+
+.profile__nav--img {
+  top: -10px;
+  position: relative; }
+  .profile__nav--img .profile__img {
+    margin-top: 10px; }
+
+.profile__name span {
+  font-size: 12px;
+  line-height: 14px; }
+
+@media screen and (max-width: 740px) {
+  .head-logo {
+    display: inline-block;
+    width: 150px;
+    margin-top: -40px; } }
+
+@media screen and (max-width: 1199px) {
+  .search-wrapper {
+    margin-top: 0px; } }
+
+@media screen and (min-width: 992px) {
+  .profile__nav--section .profile__navbox {
+    text-align: left; } }
+
+@media screen and (min-width: 1200px) {
+  .profile__nav--section .profile__navbox {
+    text-align: right; } }

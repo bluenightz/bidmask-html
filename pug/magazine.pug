@@ -1,0 +1,173 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      "assets/js/owlcarousel/dist/assets/owl.carousel.min.css",
+      "assets/js/owlcarousel/dist/assets/owl.theme.default.css"
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block append script
+  -
+    var js = [
+      "assets/js/owlcarousel/dist/owl.carousel.min.js",
+      "assets/js/news.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container
+        .row.mt-sm.mb-lg
+          |
+          |
+          // start left column
+          .col-md-3
+            |
+            |
+            h4.text_head--h4.mb-sm 
+              i.fa.fa-file-text-o 
+              |  ประเภท
+            ul.sidesubmenu
+              li.active
+                a(href="magazine.php") นิตยสาร
+              li
+                a(href="news.php") ข่าวสาร
+              li
+                a(href="article.php") บทความ
+              li
+                a(href="event.php") อีเวนท์
+              li
+                a(href="promotion.php") โปรโมชั่น
+          // end left column
+          |
+          |
+          |
+          // start right column
+          .col-md-9
+            .container-fluid
+              .row
+                .col-md-12
+                  // slideshow
+                  .owl-carousel.owl-theme
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+              
+              .row
+                .col-md-12
+                  h4.text_head--h4.mb-sm 
+                    i.fa.fa-star 
+                    |  นิตยสารแนะนำ
+              .row
+                .col-md-12
+                  table.table.table-striped.table-hover
+                    col(width="20%")
+                    col(width="15%")
+                    col(width="55%")
+                    col(width="10%")
+                    thead
+                      tr
+                        th ภาพนิตยสาร
+                        th หัวข้อนิตยสาร
+                        th รายละเอียด
+                        th วันที่
+                    tbody
+                      - var n = 0
+                      while n < 3
+                        // start news, 1 item
+                        tr
+                          td
+                            img(src="assets/img/img-test.jpg")
+                            .text-center.text-xs-2.mt-xs-2 เข้าชมแล้ว 1,420 ครั้ง
+                          td
+                            a(href="#") โครงการศุภาลัย
+                          td
+                            a(href="news_detail.php") โครงการศุภาลัย มีการปรับราคาบ้านเดี่ยวและทาวน์โฮมในตัวเมืองหลายแห่ง ทั้งนี้เพื่อตอบรับกระแสของความต้องการที่มีมากขึ้น
+                          td 02/09/60
+                        // end news, 1 item
+                        - n++
+
+              .row
+                .col-md-12
+                  .divide-line
+
+              .row.form.form-horizontal.mt-sm
+                |
+                |
+                .col-md-3
+                  h4.text_head--h4.mb-sm 
+                    |  ข่าวสาร
+                // start filter section
+                .col-md-6.text-right
+                  .form-group
+                      label.col-md-12.control-label ค้นหาจาก
+                .col-md-3
+                  input(type="text", class="form-control", placeholder="หัวข้อ/รายละเอียด")
+
+              .row
+                .col-md-12
+                  table.table.table-striped.table-hover
+                    col(width="20%")
+                    col(width="15%")
+                    col(width="55%")
+                    col(width="10%")
+                    thead
+                      tr
+                        th ภาพนิตยสาร
+                        th หัวข้อนิตยสาร
+                        th รายละเอียด
+                        th วันที่
+                    tbody
+                      - var n = 0
+                      while n < 10
+                        // start news, 1 item
+                        tr
+                          td
+                            img(src="assets/img/img-test.jpg")
+                            .text-center.text-xs-2.mt-xs-2 เข้าชมแล้ว 1,420 ครั้ง
+                          td
+                            a(href="#") โครงการศุภาลัย
+                          td
+                            a(href="news_detail.php") โครงการศุภาลัย มีการปรับราคาบ้านเดี่ยวและทาวน์โฮมในตัวเมืองหลายแห่ง ทั้งนี้เพื่อตอบรับกระแสของความต้องการที่มีมากขึ้น
+                          td 02/09/60
+                        // end news, 1 item
+                        - n++
+              |
+              |
+              .row.mb-lg
+                |
+                |
+                // start pagination section
+                ul.pagination-list
+                  <li><a href="#"><<</a></li>
+                  <li><a href="#"><</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">>></a></li>
+                  <li><a href="#">></a></li>
+                // end pagination section
+                |
+                |
+
+          // end right column
+          |
+          |
+            
+
+
+
+
+      
+

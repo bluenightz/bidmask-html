@@ -1,0 +1,148 @@
+extends /template/basic-login.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid
+    .row
+      include inc/user-nav.pug
+    .row
+      .container
+        .row.mb-lg.mt-xs
+          .col-md-12
+              .row.mb-sm
+                .col-xs-6
+                  h4.text_head--h4 History
+              .row
+                .col-xs-12
+                  .table-responsive.pos-relative.asset-user
+                    table.table.table-striped.table-hover.table-bordered.tbl-history
+                      colgroup
+                        col(width="5%")
+                        col(width="15%")
+                        col(width="")
+                        col(width="10%")
+                      thead
+                        tr
+                          th.text-center No.
+                          th.text-center Date
+                          th.text-center History
+                          th.text-center Price
+                      - var n = 0;
+                        tbody
+                          while n < 10
+                            if n == 3 || n == 5
+                              tr
+                                td.text-center= n+1
+                                td 01/08/2560
+                                td Buy Ticket Event Line
+                                td.text-center
+                                  .label.label-danger - 1,000
+                            else
+                              tr
+                                td.text-center= n+1
+                                td 01/08/2560
+                                td Buy Credit
+                                td.text-center
+                                  .label.label-success + 1,000
+                            - n++
+                    input#ui-guide(type='checkbox')
+                    label.ui-guide(for="ui-guide")
+                      span
+                        i.fa.fa-arrow-left
+                        | เลื่อนเพื่อดูเพิ่มเติม
+                        i.fa.fa-arrow-right
+              +line(1)
+              .row.mt-sm
+                // start pagination section
+                ul.pagination-list
+                  <li><a href="#"><<</a></li>
+                  <li><a href="#"><</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">>></a></li>
+                  <li><a href="#">></a></li>
+                // end pagination section
+                |
+                |
+                |
+
+  // start new message modal
+  <div class="modal fade" id="new-message-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">ส่งข้อความ</h4>
+        </div>
+        <div class="modal-body">
+          form.form.form-horizontal
+            .form-group
+              label.col-xs-12.col-sm-3.control-label Title
+              .col-xs-12.col-sm-9
+                input(type='text', class='form-control')
+            .form-group
+              label.col-sm-3.control-label Date
+              p.form-control-static.col-sm-9 10 Aug 2017 14:45 PM
+            .form-group
+              label.col-sm-3.control-label Sender
+              p.form-control-static.col-sm-9 admin@bidmask.com
+            .form-group
+              label.col-sm-3.control-label Message
+              .col-xs-12.col-sm-9
+                textarea.form-control(rows="5")
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+          <button type="button" class="btn btn-primary">ส่งข้อความ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  |
+  |
+  |
+  // start read message modal
+  <div class="modal fade" id="read-message-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Welcome to Bidmask</h4>
+        </div>
+        <div class="modal-body">
+          .form.form-horizontal
+            .form-group
+              label.col-sm-3.control-label Date
+              p.form-control-static.col-sm-9 10 Aug 2017 14:45 PM
+            .form-group
+              label.col-sm-3.control-label Sender
+              p.form-control-static.col-sm-9 admin@bidmask.com
+            .form-group
+              label.col-sm-3.control-label Message
+              p.form-control-static.col-sm-9 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ex fugit id sunt aspernatur omnis ullam quidem optio, maxime beatae. Eveniet nesciunt magni placeat porro illum, voluptatum amet perspiciatis animi eaque quos ut consequuntur modi minus asperiores necessitatibus. Delectus, corporis, ut! Dolor eos, illo nostrum a velit quaerat omnis voluptatum dignissimos obcaecati minima reiciendis beatae impedit magni suscipit facere deserunt corporis ducimus. Explicabo veniam harum, doloremque minima sunt porro dolor officia. Placeat tempora, aperiam, repellendus necessitatibus quasi delectus? Quaerat quisquam labore ea consequuntur, pariatur aliquid excepturi inventore neque tenetur eius quod ullam nostrum officiis at reiciendis repellat impedit officia ad.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        </div>
+      </div>
+    </div>
+  </div>

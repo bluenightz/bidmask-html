@@ -1,0 +1,490 @@
+extends /template/basic-login.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid
+    .row
+      include inc/user-nav.pug
+  .container-fluid.mb-lg.mt-xs
+    .row
+      .container
+        .row
+            +line(1)
+            // start step
+            .container-fluid.step-list
+              .row.mb-xs
+                .col-sm-3.col-xs-6
+                  .service-box.active
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 1<br>รายละเอียดทรัพย์สิน
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 2<br>รายละเอียดทรัพย์สิน
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 3<br>แผนที่, สภาพแวดล้อม
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 4<br>ข้อมูลพื้นที่
+            // end step
+            +line(1)
+        .row
+          a(href="#policy_before_post_asset", data-toggle="modal", class="btn-call-policy") อ่านเงื่อนไขและยอมรับก่อน Post คลิกที่นี่
+        .row
+          .col-md-8.col-md-offset-2
+            +line(1)
+            // start profile box
+            .container-fluid.postasset_profile.mb-xs
+              .row
+                .col-xs-6.col-sm-4.postasset_profile_img
+                  img(src="assets/img/avatar-user.jpg")
+                .col-xs-6.col-sm-4
+                  h4.text_head--h4 Firstname Lastname <br>
+                  strong.inline-label สถานภาพ
+                  | SubArea <br>
+                  strong.inline-label พื้นที่
+                  |  Lorem ipsum dolor sit amet. <br>
+                  strong.inline-label จังหวัด
+                  | กรุงเทพมหานคร <br>
+                .col-xs-12.col-sm-4
+                  strong.postasset_completed ความสมบูรณ์ของข้อมูล<br>
+                  strong.postasset_completed_number 20%
+            // end profile box
+            +line(1)
+        .row
+          .col-md-12
+              form.form-horizontal.container-fluid.form-label-left
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 Property Info
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 สถานะคุณกับทรัพย์
+                        .col-xs-9
+                          .radio.col-xs-6.col-sm-3
+                            label
+                              input(type="radio")
+                              | Owner
+                          .radio.col-xs-6.col-sm-3
+                            label
+                              input(type="radio")
+                              | ตัวแทน
+                .divide-line.mb-sm
+                +line(1)
+                // start ประเภทการขาย
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 Property For<br>ประเภทการขาย
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 ประเภทการขาย
+                        .col-xs-9.col-sm-3
+                          select.form-control
+                            option กรุณาเลือก
+                            option ขายสด
+                            option ขายผ่อนชำระ
+                            option เช่า
+                            option หญิง
+                            option ร่วมทุน
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนงวดผ่อน
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static งวด
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 ระยะเวลาผ่อน
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static เดือน
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 เงินมัดจำขั้นต่ำ
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static บาท
+                +line(1)
+                // start สำหรับ กรณีที่เลือกร่วมทุน
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 Owner
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static %
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 Buyer
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static %
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 เงินสดที่ต้องการ
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static บาท
+                // end สำหรับ กรณีที่เลือกร่วมทุน
+                +line(1)      
+                .row.mt-xs
+                  .form-group.col-sm-12
+                    .col-xs-12.text-right
+                      <a href="#" type="submit" class="basic-btn btn btn-primary">บันทึก</a>
+
+                .divide-line.mb-sm
+                +line(1)
+                // start property type group 
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 Property Type<br>ประเภททรัพย์สิน
+                .row.mb-sm
+                  .col-sm-3.col-xs-12.mb-sm
+                    strong.text_head--h5 รายทรัพย์/รายพื้นที่
+                    .pl
+                      - var list = ["ที่ดินเปล่า", "บ้านเดี่ยว/บ้านแฝด", "อาคารพาณิชย์", "โรงงาน", "โรงแรม"]
+                      each item in list
+                        .radio
+                          label
+                            input(type="radio")
+                            = item
+                  .col-sm-3.col-xs-12.mb-sm
+                    strong.text_head--h5 รายกิจการ-ร้านค้า
+                    .pl
+                      - var list = ["ร้านอาหาร", "ร้านกาแฟ", "ที่จอดรถ", "พื้นที่ค้าขายเป็นแผง/ห้อง"]
+                      each item in list
+                        .radio
+                          label
+                            input(type="radio")
+                            = item
+                  .col-sm-3.col-xs-12.mb-sm
+                    strong.text_head--h5 รายธุรกิจ-กิจการ
+                    .pl
+                      - var list = ["ธุรกิจโรงแรม", "ธุรกิจปั๊มน้ำมัน"]
+                      each item in list
+                        .radio
+                          label
+                            input(type="radio")
+                            = item
+                  .col-sm-3.col-xs-12.mb-sm
+                    strong.text_head--h5 ประมูลโครงการ
+                    .pl
+                      - var list = ["โครงการหอพัก", "โครงการหมู่บ้านจัดสรร", "โครงการคอนโด"]
+                      each item in list
+                        .radio
+                          label
+                            input(type="radio")
+                            = item
+                .row
+                  .form-group.col-xs-12
+                    label.control-label.col-xs-3 หัวข้อประกาศ 
+                      a.btn-help(href="#modal_help", data-toggle="modal")  
+                        i.fa.fa-question-circle
+                    .col-xs-9.col-sm-4
+                      input.form-control(type="text")
+                .row
+                  .form-group.col-xs-12
+                    label.control-label.col-xs-3 รายละเอียด
+                    .col-xs-9.col-sm-4
+                      textarea(class="form-control", rows="5")
+                          
+                .row.mt-xs
+                  .form-group.col-sm-12
+                    .col-xs-12.text-right
+                      <a href="#" type="submit" class="basic-btn btn btn-primary">บันทึก</a>
+
+                .divide-line.mb-sm
+                +line(1)
+                // start ข้อมูลราคา
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 ข้อมูลราคา
+
+                .row
+                  .col-xs-12.col-sm-6
+                    .form-group
+                      label.control-label.col-xs-4 ราคาเปิดประมูล
+                      .col-xs-6
+                        input.form-control(type="text")
+                      .col-xs-1 บาท
+                    .form-group
+                      label.control-label.col-xs-4 ราคาตลาด
+                      .col-xs-6
+                        input.form-control(type="text")
+                      .col-xs-1 บาท
+                    .form-group
+                      label.control-label.col-xs-4 ราคาต่ำสุดที่ยอมขาย
+                      .col-xs-6
+                        input.form-control(type="text")
+                      .col-xs-1 บาท
+                    .form-group
+                      label.control-label.col-xs-4 ราคาสูงสุดที่ต้องการขาย
+                      .col-xs-6
+                        input.form-control(type="text")
+                      .col-xs-1 บาท
+                    .form-group
+                      label.control-label.col-xs-4 การเปิดเผยราคา
+                      .col-xs-6
+                        select.form-control
+                          option ---------------
+                      .col-xs-1 บาท
+                  .col-xs-12.col-sm-6
+                    .form-group
+                      label.control-label.col-xs-4 วันเริ่มต้นการประมูล
+                      .col-xs-6
+                        input.form-control(type="text")
+                    .form-group
+                      label.control-label.col-xs-4 วันสิ้นสุดการประมูล
+                      .col-xs-6
+                        input.form-control(type="text")
+
+                .row.mt-xs
+                  .form-group.col-sm-12
+                    .col-xs-12.text-right
+                      <a href="#" type="submit" class="basic-btn btn btn-primary">บันทึก</a>
+              
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 Location
+                .row
+                  .form-group.col-xs-12.col-sm-6
+                      label.control-label.col-xs-6 ชื่อโครงการ/ชื่อหมู่บ้าน/ชื่อกิจการ
+                      .col-xs-6
+                        input.form-control(type="text")
+                  .form-group.col-xs-12.col-sm-6
+                      label.control-label.col-xs-6 ชื่อเจ้าของโครงการ/ชื่อเจ้าของกิจการ
+                      .col-xs-6
+                        input.form-control(type="text")
+                          
+                .row
+                    .form-group.plr
+                      label.control-label.col-sm-1.col-sm-wauto เลขที่
+                      .col-sm-2
+                        input.form-control(type="text")
+                      label.control-label.col-sm-2.col-sm-wauto จำนวนอาคาร
+                      .col-sm-2
+                        input.form-control(type="text")
+                      label.control-label.col-sm-2.col-sm-wauto ชื่ออาคาร
+                      .col-sm-2
+                        input.form-control(type="text")
+                      .clearfix.mb-xs
+                      label.control-label.col-sm-1.col-sm-wauto ชั้นที่
+                      .col-sm-2
+                        input.form-control(type="text")
+                      label.control-label.col-sm-1.col-sm-wauto โซน
+                      .col-sm-2
+                        input.form-control(type="text")
+                      label.control-label.col-sm-1.col-sm-wauto หมู่ที่
+                      .col-sm-2
+                        input.form-control(type="text")
+                      .clearfix.mb-xs
+                      label.control-label.col-sm-1.col-sm-wauto ซอย
+                      .col-sm-3
+                        input.form-control(type="text")
+                      label.control-label.col-sm-1.col-sm-wauto ถนน
+                      .col-sm-3
+                        input.form-control(type="text")
+
+                    .form-group.plr
+                        .col-sm-2.col-xs-down-mb-xs
+                          select.form-control
+                            option จังหวัด
+                        .col-sm-2.col-xs-down-mb-xs
+                          select.form-control
+                            option อำเภอ
+                        .col-sm-2.col-xs-down-mb-xs
+                          select.form-control
+                            option ตำบล
+                        label.control-label.col-sm-2 รหัสไปรษณีย์
+                        .col-sm-2
+                          input.form-control.input-small(type="text")
+                .row
+                  .form-group.col-xs-12.col-sm-4
+                      label.control-label.col-xs-6 โฉนดเลขที่
+                      .col-xs-6
+                        input.form-control(type="text")
+                  .form-group.col-xs-12.col-sm-4
+                      label.control-label.col-xs-6 เลขที่ระวาง
+                      .col-xs-6
+                        input.form-control(type="text")
+                  .form-group.col-xs-12.col-sm-4
+                      label.control-label.col-xs-6 เลขที่ดิน
+                      .col-xs-6
+                        input.form-control(type="text")
+
+
+
+                .row.mt-sm
+                  .form-group.col-xs-12
+                    label.control-label.col-sm-3 แผนที่การเดินทาง
+                    .col-sm-4
+                      input.form-control(type="file")
+                    .col-sm-6.col-sm-offset-3
+                      p.form-contro-static.mt-xs
+                        img(src="http://placehold.it/500x250?text=Map")
+
+                .row.mt-sm
+                  .form-group.col-xs-12
+                    label.control-label.col-sm-3 รูปภาพ
+                    .col-sm-4
+                      input.form-control(type="file")
+                    .col-sm-6.col-sm-offset-3
+                      p.form-contro-static.mt-xs
+                        img(src="http://placehold.it/500x250?text=Map")
+
+                .row.mt-sm
+                  .form-group.col-xs-12
+                    label.control-label.col-sm-3 Google Map 
+                      a.btn-help(href="#modal_help", data-toggle="modal")  
+                        i.fa.fa-question-circle
+                    .col-sm-3
+                      input.form-control(type="text", placeholder="ตำแหน่งละติจูด")
+                    .col-sm-3
+                      input.form-control(type="text", placeholder="ตำแหน่งลองติจูด")
+                    .col-sm-6.col-sm-offset-3
+                      p.form-contro-static.mt-xs
+                        div#googleMap
+                          img(src="http://placehold.it/500x250?text=Google Map")
+
+                .row.mt-sm
+                  .form-group.col-xs-12
+                    label.control-label.col-sm-3 Street View
+                    .col-sm-6
+                      p.form-contro-static
+                        div#streetMap
+                          img(src="http://placehold.it/500x250?text=StreetView")
+
+
+                .row.mt-sm
+                  .form-group.col-xs-12
+                    label.control-label.col-sm-3 Video
+                    .col-sm-6
+                      input.form-control(type="text", placeholder="Video URL")
+                    .col-sm-6.col-sm-offset-3
+                      p.form-contro-static.mt-xs
+                        div#videoFrame
+                          img(src="http://placehold.it/500x250?text=Video")
+
+
+                .row.mt-sm
+                  .form-group.col-xs-12
+                    label.control-label.col-sm-3 ผังสี
+                    .col-sm-2
+                      select.form-control
+                        option --------------
+                    .col-sm-3
+                      input.form-control(type="text")
+                    .col-sm-2
+                      button.btn.btn-default Link
+                      a.btn-help(href="#modal_help", data-toggle="modal")  
+                        i.fa.fa-question-circle
+
+                .row.mt-xs
+                  .form-group.col-sm-12
+                    .col-xs-12.text-right
+                      <a href="#" type="submit" class="basic-btn btn btn-primary">บันทึก</a>
+
+  +line(1)
+  <div class="modal fade" id="modal_help">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Help Modal</h4>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  +line(1)
+  // modal for read policy before post asset
+  #policy_before_post_asset.modal.fade
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button(type="button", class="close", data-dismiss="modal", aria-hidden="true") &times;
+          h4.modal-title สถานะของคุณกับทรัพย์
+        .modal-body
+
+          .container-fluid
+            .row
+                .col-sm-3.course
+                  h4.text_head--h4.text-center Owner
+                  .course-img
+                    img(src='http://placehold.it/400x300')
+                  .minh-1.mt-xs Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate ad aspernatur, dolore, nesciunt incidunt
+                  a.readmore(href="#") Post
+                
+                +line(1)
+
+                .col-sm-3.course
+                  h4.text_head--h4.text-center Agent
+                  .course-img
+                    img(src='http://placehold.it/400x300')
+                  .minh-1.mt-xs Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate ad aspernatur, dolore, nesciunt incidunt sint vitae magni officiis
+                  a.readmore(href="#") Post
+                
+                +line(1)
+
+                .col-sm-3.course
+                  h4.text_head--h4.text-center FC
+                  .course-img
+                    img(src='http://placehold.it/400x300')
+                  .minh-1.mt-xs Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate ad aspernatur, dolore, nesciunt incidunt sint vitae magni officiis eligendi alias placeat,
+                  a.readmore(href="#") Post
+                  a.readmore.readmore-orange(href="#") ซื้อสิทธิ์
+                
+                +line(1)
+
+                .col-sm-3.course
+                  h4.text_head--h4.text-center SubArea
+                  .course-img
+                    img(src='http://placehold.it/400x300')
+                  .minh-1.mt-xs Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate ad aspernatur, dolore, nesciunt incidunt sint vitae magni officiis eligendi alias placeat, corporis
+                  a.readmore(href="#") Post
+                  a.readmore.readmore-orange(href="#") ซื้อสิทธิ์
+                
+                +line(1)
+
+      //
+        .modal-footer
+          button(type="button", class="btn btn-default", data-dismiss="modal", aria-hidden="true") ปิด
+          button(type="button", class="btn btn-primary") บันทึก
+
+
+
+

@@ -1,0 +1,137 @@
+extends /template/basic-login.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+      "assets/js/profile.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid
+    .row
+      .container
+        .row.mb-lg.mt-xs
+          .col-md-3
+            .container-fluid.mb-sm
+              .row
+                .col-xs-6.textstyle-1 
+                  i.fa.fa-usd   
+                  | วงเงิน
+                .col-xs-6.nopadr
+                  .basic-bar(data-bar="10000000", data-bar-max="20000000")
+                .col-xs-12.nopadr.text-right 10 K / 20 M
+              .row.mt-xs-2
+                .col-xs-6.textstyle-1 
+                  i.fa.fa-usd 
+                  | เงินประกัน
+                .col-xs-6.nopadr.text-right 10,000 บาท
+            ul.sidesubmenu
+              li.active
+                a(href="profile.php") Profile
+              li
+                a(href="change_password.php") Change Password
+              li
+                a(href="credit.php") Credit
+          .col-md-9
+              form.form-horizontal.container-fluid.form-label-left
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 Your Image
+                .row
+                    .form-group.col-sm-6.mb-sm
+                      .post-img.text-center
+                        img(src="assets/img/avatar-user.jpg")
+                      label.control-label.col-xs-12.text-left Postname
+                      .col-xs-12
+                        input(type='text', class='form-control')
+                    .form-group.col-sm-6
+                      .post-img.text-center
+                        img(src="assets/img/avatar-user.jpg")
+                      label.control-label.col-xs-12.text-left Bidname
+                      .col-xs-12
+                        input(type='text', class='form-control')
+                .row.mt-xs
+                  .col-xs-12
+                    h4.text_head--h4 Profile
+                .row
+                    .form-group.col-sm-6
+                      label.control-label.col-xs-12.text-left Firstname
+                      .col-xs-12
+                        input(type='text', class='form-control')
+                    .form-group.col-sm-6
+                      label.control-label.col-xs-12.text-left Lastname
+                      .col-xs-12
+                        input(type='text', class='form-control')
+                .row
+                    .form-group.col-sm-6
+                      label.control-label.col-xs-12.text-left Email
+                      .col-xs-12
+                        input(type='text', class='form-control')
+                .row.mt-xs
+                  .col-xs-12
+                    h4.text_head--h4 Address
+                .row
+                  .form-group.col-sm-8
+                    label.control-label.col-xs-12.text-left Address
+                    .col-xs-12
+                      textarea(rows="5", class='form-control')
+                .row
+                  .form-group.col-sm-6
+                    label.control-label.col-xs-12.text-left จังหวัด
+                    .col-xs-12
+                      select(class="form-control")
+                        option เลือกจังหวัด
+                        option กรุงเทพมหานคร
+                        option นนทบุรี
+                  .form-group.col-xs-6
+                    label.control-label.col-xs-12.text-left อำเภอ
+                    .col-xs-12
+                      select(class="form-control")
+                        option เลือกอำเภอ
+                        option กรุงเทพมหานคร
+                        option นนทบุรี
+                .row
+                    .form-group.col-sm-6
+                      label.control-label.col-xs-12.text-left ตำบล
+                      .col-xs-12
+                        select(class="form-control")
+                          option เลือกตำบล
+                          option กรุงเทพมหานคร
+                          option นนทบุรี
+                    .form-group.col-sm-6
+                      label.control-label.col-xs-12.text-left รหัสไปรษณีย์
+                      .col-xs-12
+                        input(type='text', class='form-control')
+                .row
+                    .form-group.col-sm-6
+                      label.control-label.col-xs-12.text-left Phone
+                      .col-xs-8
+                        input(type='text', class='form-control')
+                      .col-xs-4
+                        button(type='button', class="btn btn-default") Submit
+                .row
+                    .form-group.col-sm-6
+                      label.control-label.col-xs-12.text-left OTP
+                      .col-xs-8
+                        input(type='text', class='form-control')
+                      .col-xs-4
+                        button(type='button', class="btn btn-default") Confirm
+                .row.mt-xs
+                  .form-group.col-sm-12
+                    .col-xs-12.text-right
+                      <a href="#" type="submit" class="basic-btn btn btn-primary">Submit</a>
+
+

@@ -1,0 +1,93 @@
+.container.z99.bgnav
+	// start top menu
+	nav.nav-main.navbar.navbar-default.topnav
+		.container-fluid.topnav
+			.row
+				.navbar-header
+					button(type="buton"
+						class="navbar-toggle"
+						data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1"
+					)
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+
+
+				.col-lg-2.text-left.logo-wrapper
+					a(href='index.php', class="head-logo")
+						img(src="assets/img/logo.png")
+
+				.col-lg-10.col-xs-12
+					.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+						.row.ptb10
+							.text-right.nav-wrapper
+								ul.nav.navbar-nav.nav-mobile
+									li.nav-item.active
+										a(href='index.php') หน้าหลัก
+									li.nav-item.dropdown 
+										a.dropdown-toggle(href='asset.php', data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false") อสังหาฯ
+											span.caret
+										ul.dropdown-menu.nav
+											li.nav-item
+												a(href="#") sub menu 1
+											li.nav-item
+												a(href="#") sub menu 2
+											li.nav-item
+												a(href="#") sub menu 3
+									li.nav-item
+										a(href='news.php') ข่าวสาร
+									li.nav-item
+										a(href='promotion.php') โปรโมชั่น
+									li.nav-item
+										a(href='event.php') อีเวนท์
+									li.nav-item
+										a(href='howto.php') วิธีการใช้งาน
+									li.nav-item
+										a(href='contactus.php') ติดต่อเรา
+
+					.profile__nav--section.profile__nav--compact
+						.container-fluid
+							.row
+								.col-xs-12
+									ul.profile__navbox.text-center
+										li.profile__nav--img
+											a(href='#').profile__img
+												img(src="assets/img/avatar-user.jpg")
+											a.profile__name(href='profile.php') 
+												span
+													| Firstname Lastname<br>
+													| Credit 20,000,000 <br>
+													| วงเงิน 0000000, เงินประกัน 00000000
+										li.profile__nav
+											a(href='asset_favourites.php') Asset
+										li.profile__nav
+											a(href='event_dashboard.php') Event
+										li.profile__nav
+											a(href='postasset.php') Post Asset
+										li.profile__nav
+											a(href='#') Commission
+										li.profile__nav
+											a(href='message.php') Message
+											span.norti.norti-primary 2
+										li.profile__nav
+											a(href='history.php') History
+					// end user nav
+					|
+					|
+	// end top menu
+	//-
+		.container-fluid.userbar
+			.row
+				.col-xs-12
+					.nav-item-login
+						a.mini-username(href='profile.php')
+							i.icon-phone.fa.fa-user 
+							span Firstname
+						span.mini-credit Credit: 
+							| 1,000,000
+						.mini-profile-img
+							img(src="assets/img/avatar-user.jpg")
+									
+

@@ -1,0 +1,145 @@
+extends /template/basic-login.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid
+    .row
+      include inc/user-nav.pug
+  .container-fluid.mb-lg.mt-xs
+    .row
+      .container
+        .row
+            +line(1)
+            // start step
+            .container-fluid.step-list
+              .row.mb-xs
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 1<br>รายละเอียดทรัพย์สิน
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 2<br>รายละเอียดทรัพย์สิน
+                .col-sm-3.col-xs-6
+                  .service-box.active
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 3<br>แผนที่, สภาพแวดล้อม
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 4<br>ข้อมูลพื้นที่
+            // end step
+            +line(1)
+        .row
+          .col-md-8.col-md-offset-2
+            +line(1)
+            // start profile box
+            .container-fluid.postasset_profile.mb-xs
+              .row
+                .col-xs-6.col-sm-4.postasset_profile_img
+                  img(src="assets/img/avatar-user.jpg")
+                .col-xs-6.col-sm-4
+                  h4.text_head--h4 Firstname Lastname <br>
+                  strong.inline-label สถานภาพ
+                  | SubArea <br>
+                  strong.inline-label พื้นที่
+                  |  Lorem ipsum dolor sit amet. <br>
+                  strong.inline-label จังหวัด
+                  | กรุงเทพมหานคร <br>
+                .col-xs-12.col-sm-4
+                  strong.postasset_completed ความสมบูรณ์ของข้อมูล<br>
+                  strong.postasset_completed_number 20%
+            // end profile box
+            +line(1)
+
+        .row
+          .col-md-12
+              form.form-horizontal.container-fluid.form-label-left
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 เส้นทางการจราจร
+                .row
+                  .form-group.plr
+                    .checkbox.col-sm-3
+                      label
+                        input(type="checkbox")
+                        | ใกล้ทางด่วน
+                    .checkbox.col-sm-3
+                      label
+                        input(type="checkbox")
+                        | ใกล้ถนนสายหลัก
+                    .checkbox.col-sm-3
+                      label
+                        input(type="checkbox")
+                        | ใกล้ถนนใหญ่
+                    .checkbox.col-sm-3
+                      label
+                        input(type="checkbox")
+                        | ทางเข้าออก 2 ทาง
+                +line(1)
+                // start ถนนหน้าพื้นที่
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 ถนนหน้าพื้นที่
+                +line(1)
+                // start ถนนทางเข้าออก
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 ถนนทางเข้าออก
+                +line(1)
+                // start ระยะห่างจากถนนใหญ่
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 ระยะห่างจากถนนใหญ่
+                +line(1)
+                // start ใกล้ชุมชนและแหล่งงาน
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 ใกล้ชุมชนและแหล่งงาน
+                +line(1)
+                // start สถานที่ใกล้เคียง
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 สถานที่ใกล้เคียง
+                +line(1)
+                // start ใกล้สถานีรถไฟฟ้า
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 ใกล้สถานีรถไฟฟ้า
+
+
+                .divide-line.mb-sm
+                          
+                .row.mt-xs
+                  .form-group.col-sm-12
+                    .col-xs-12.text-right
+                      <a href="#" type="submit" class="basic-btn btn btn-primary">บันทึก</a>
+
+
+
+

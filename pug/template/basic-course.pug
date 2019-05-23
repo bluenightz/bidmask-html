@@ -1,0 +1,28 @@
+extends /inc/basic-wrapper-no-slide.pug
+
+block prepend prebuild
+	include /inc/prebuild.pug
+
+block headmeta
+	// include basic css, meta
+	if production
+		|
+		<?php include_once('inc/basic-head-meta.php'); ?>
+	else
+		include /inc/basic-head-meta.pug
+
+block mainnav
+	// include top menu
+	if production
+		|
+		<?php include_once('inc/basic-mainnav_logo-left.php'); ?>
+	else
+		include /inc/basic-mainnav_logo-left.pug
+
+block footer
+	// include footer
+	if production
+		|
+		<?php include_once('inc/basic-footer.php'); ?>
+	else
+		include /inc/basic-footer.pug

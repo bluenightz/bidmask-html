@@ -1,0 +1,311 @@
+extends /template/basic-login.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid
+    .row
+      include inc/user-nav.pug
+  .container-fluid.mb-lg.mt-xs
+    .row
+      .container
+        .row
+            +line(1)
+            // start step
+            .container-fluid.step-list
+              .row.mb-xs
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 1<br>รายละเอียดทรัพย์สิน
+                .col-sm-3.col-xs-6
+                  .service-box.active
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 2<br>รายละเอียดทรัพย์สิน
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 3<br>แผนที่, สภาพแวดล้อม
+                .col-sm-3.col-xs-6
+                  .service-box
+                    img(src="http://placehold.it/100x100", class="about-img-2")
+                    .service-title ขั้นตอนที่ 4<br>ข้อมูลพื้นที่
+            // end step
+            +line(1)
+        .row
+          .col-md-8.col-md-offset-2
+            +line(1)
+            // start profile box
+            .container-fluid.postasset_profile.mb-xs
+              .row
+                .col-xs-6.col-sm-4.postasset_profile_img
+                  img(src="assets/img/avatar-user.jpg")
+                .col-xs-6.col-sm-4
+                  h4.text_head--h4 Firstname Lastname <br>
+                  strong.inline-label สถานภาพ
+                  | SubArea <br>
+                  strong.inline-label พื้นที่
+                  |  Lorem ipsum dolor sit amet. <br>
+                  strong.inline-label จังหวัด
+                  | กรุงเทพมหานคร <br>
+                .col-xs-12.col-sm-4
+                  strong.postasset_completed ความสมบูรณ์ของข้อมูล<br>
+                  strong.postasset_completed_number 20%
+            // end profile box
+            +line(1)
+
+        .row
+          .col-md-12
+              form.form-horizontal.container-fluid.form-label-left
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 รายละเอียด
+                .row
+                    .form-group.col-xs-12
+                        .col-xs-9
+                          .radio.col-xs-6.col-sm-3
+                            label
+                              input(type="radio")
+                              | ห้ามรบกวน
+                          .radio.col-xs-6.col-sm-4
+                            label
+                              input(type="radio")
+                              | มีผู้อยู่อาศัยห้ามรบกวน
+                .divide-line.mb-sm
+
+                +line(1)
+                // start checkbox zone 1
+                .row
+                    .form-group.plr
+                      .checkbox.col-sm-3
+                        label.checkbox_with_number
+                          input(type="checkbox")
+                          | จำนวนชั้น
+                          input.form-control(type="text")
+                      .checkbox.col-sm-3
+                        label.checkbox_with_number
+                          input(type="checkbox")
+                          | อยู่ชั้นที่
+                          input.form-control(type="text")
+                      .checkbox.col-sm-3
+                        label.checkbox_with_number
+                          input(type="checkbox")
+                          | อายุทรัพย์
+                          input.form-control(type="text")
+                      .checkbox.col-sm-3
+                        label.checkbox_with_number
+                          input(type="checkbox")
+                          | ระยะเวลาที่มีชื่อยู่ในทะเบียนบ้าน
+                          input.form-control(type="text")
+                
+                +line(1)
+                // start checkbox zone 2
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 จำนวนห้อง
+
+                .row
+                    .form-group.plr
+                      - var type = ['ห้องนอนชั้นบน', 'ห้องนอนชั้นล่าง', 'ห้องอื่นๆ', 'ห้องน้ำชั้นบน', 'ห้องน้ำชั้นล่าง', 'เครื่องปรับอากาศ', 'ที่จอดรถ', 'ห้องแม่บ้าน'];
+                      each item, index in type
+                        if index % 4 == 0
+                          .clearfix
+                        .checkbox.col-sm-3.mb-sm
+                          label.checkbox_with_number
+                            input(type="checkbox")
+                            = item
+                            input.form-control(type="text")
+                
+                +line(1)
+                // รูปแบบห้อง
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 รูปแบบห้อง 
+
+                
+                +line(1)
+                // start checkbox zone 3
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 ค่าใช้จ่ายอื่นๆ 
+
+                .row
+                    .form-group.plr
+                      - var type = ['ค่าส่วนกลาง (บาท/เดือน)', 'ค่าไฟ (บาท/Unit)', 'ค่าน้ำ (บาท/Unit)'];
+                      each item, index in type
+                        if index % 4 == 0
+                          .clearfix
+                        .checkbox.col-sm-3.mb-sm
+                          label.checkbox_with_number
+                            input(type="checkbox")
+                            = item
+                            input.form-control(type="text")
+                +line(1)
+                // start ภาระผูกพัน
+                .divide-line.mb-sm
+                .row.mb-sm
+                  .col-xs-12
+                    h4.text_head--h4 ภาระผูกพัน
+
+                .row
+                  .form-group.col-xs-12
+                    label.control-label.col-sm-3 ภาระหนี้สิน
+                    .col-sm-3
+                      select.form-control
+                        option ปลอดจำนอง
+                        option จำนอง
+                        option ขายฝาก
+                        option สัญญาลอย
+
+                +line(1)
+                // start กรณีเลือกจำนอง
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 ธนาคาร
+                        .col-xs-7.col-sm-2
+                          select.form-control
+                            option ---------------
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนเงิน
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static บาท
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 ระยะเวลาไถ่ถอน
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนงวดค้างชำระ
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static งวด
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนงวดค้างชำระค่างวดทั้งหมด
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static บาท
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 สัญญา
+                        .col-xs-7.col-sm-3
+                          input(type="file", class="form-control")
+                // end กรณีเลือกจำนอง
+                |
+                |
+                // start กรณีเลือกขายฝาก
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 ชื่อ-นามสกุล
+                        .col-xs-7.col-sm-3
+                          input(type="text", class="form-control")
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนเงิน
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static บาท
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 ระยะเวลาไถ่ถอน
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนงวดค้างชำระ
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static งวด
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนงวดค้างชำระค่างวดทั้งหมด
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static บาท
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 สัญญา
+                        .col-xs-7.col-sm-3
+                          input(type="file", class="form-control")
+                // end กรณีเลือกขายฝาก
+                |
+                |
+                // start กรณีเลือกสัญญาลอย
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 ชื่อ-นามสกุล
+                        .col-xs-7.col-sm-3
+                          input(type="text", class="form-control")
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนเงิน
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static บาท
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 ระยะเวลาไถ่ถอน
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนงวดค้างชำระ
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static งวด
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 จำนวนงวดค้างชำระค่างวดทั้งหมด
+                        .col-xs-7.col-sm-2
+                          input(type="text", class="form-control")
+                        .col-xs-1
+                          p.form-control-static บาท
+                .row
+                    .form-group.col-xs-12
+                        label.control-label.col-xs-3 สัญญา
+                        .col-xs-7.col-sm-3
+                          input(type="file", class="form-control")
+                // end กรณีเลือกสัญญาลอย
+                +line(1)
+                
+                .divide-line.mb-sm
+                          
+                .row.mt-xs
+                  .form-group.col-sm-12
+                    .col-xs-12.text-right
+                      <a href="#" type="submit" class="basic-btn btn btn-primary">บันทึก</a>
+
+
+
+

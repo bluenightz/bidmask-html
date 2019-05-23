@@ -1,0 +1,104 @@
+extends /template/basic-login.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+      "assets/js/profile.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid
+    .row
+      include inc/user-nav.pug
+    .row
+      .container
+        .row.mb-lg.mt-xs
+          .col-md-3
+            ul.sidesubmenu
+              li.active
+                a(href="event_dashboard.php") Event
+              li
+                a(href="event_favourites.php") Favourites
+          .col-md-9
+              .row.mb-sm
+                .col-xs-12
+                  h4.text_head--h4 Event
+              .row
+                .col-xs-12
+                  .table-responsive.pos-relative.asset-user
+                    table.table.table-striped.table-hover.table-bordered
+                      colgroup
+                        col(width="20%")
+                        col(width="")
+                        col(width="15%")
+                        col(width="15%")
+                        col(width="10%")
+                      thead
+                        tr
+                          th.text-center Event Into
+                          th &nbsp;
+                          th.text-center Status
+                          th.text-center Alert
+                          th.text-center Action
+                      - var n = 0;
+                        tbody
+                          while n < 10
+                            tr
+                              td
+                                a.asset_img(href='#')
+                                  img(src="assets/img/img-test.jpg")
+                                  span 
+                                    i.fa.fa-sign-in 
+                                    |   ดูรายละเอียด
+                              td
+                                h4.text_head--h4 
+                                  a(href='#') Centara Condo
+                                p.text_desc Type : Tour
+                                h4.text_head--h4 
+                                  a(href='#') Auction Info
+                                p.text_desc
+                                  | Start Date: 20 Aug 2017<br>
+                                  | End Deposit: 22 Aug 2017<br>
+                                  | Ticket Price: 1,000 ฿ 
+                              td.text-center Already Registered
+                              td.text-center
+                                if ( n == 2 )
+                                  | Cancel
+                                else
+                                  | Delay 31 Aug
+                              td.text-center
+                                .form-group(style="width: 100px;")
+                                  select.form-control
+                                    option -------
+                            - n++
+                    input#ui-guide(type='checkbox')
+                    label.ui-guide(for="ui-guide")
+                      span
+                        i.fa.fa-arrow-left
+                        | เลื่อนเพื่อดูเพิ่มเติม
+                        i.fa.fa-arrow-right
+              +line(1)
+              .row.mt-sm
+                // start pagination section
+                ul.pagination-list
+                  <li><a href="#"><<</a></li>
+                  <li><a href="#"><</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">>></a></li>
+                  <li><a href="#">></a></li>
+                // end pagination section

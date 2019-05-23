@@ -1,0 +1,68 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+//-
+  block prepend body
+    body.basic-bg
+
+
+block prepend content
+  .container-fluid.course-wrapper.bg1.nomargin
+    .row.mt-sm
+      .container
+        .col-md-12
+            .content-box-fullwidth
+              .row
+                  .col-lg-3
+                    .content-head
+                      h4 Customer Register
+              .row
+                .col-md-6.col-md-offset-3.form-horizontal.mt-sm
+                  .form-group
+                    label.control-label.col-md-4.text-right.text-left-xs Firstname
+                    .col-md-8
+                      input(type="text", class="form-control")
+                  .form-group
+                    label.control-label.col-md-4.text-right.text-left-xs Lastname
+                    .col-md-8
+                      input(type="text", class="form-control")
+                  .form-group
+                    label.control-label.col-md-4.text-right.text-left-xs Email
+                    .col-md-8
+                      input(type="text", class="form-control")
+                  .form-group
+                    label.control-label.col-md-4.text-right.text-left-xs Password
+                    .col-md-8
+                      input(type="password", class="form-control")
+                  .form-group
+                    label.control-label.col-md-4.text-right.text-left-xs Confirm Password
+                    .col-md-8
+                      input(type="password", class="form-control")
+                  .form-group
+                    .col-xs-12.col-md-8.col-md-offset-4
+                      input(type="submit", class="btn-primary btn", value="Submit")
+                  .row.mt-lg
+                    .col-xs-6.text-right
+                      img(src="assets/img/btn_facebook.gif")
+                    .col-xs-6.text-left
+                      img(src="assets/img/btn_google.gif")
+
+  
+

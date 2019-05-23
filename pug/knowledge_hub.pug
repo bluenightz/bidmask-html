@@ -1,0 +1,97 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.course-wrapper.bg1.nomargin
+    .container.concept-row
+      .row
+        .col-xs-12.text-center.intro
+          img(src='assets/img/head-knowledge.png', alt="ศาสตร์ตัวเลข", title="ศาสตร์ตัวเลข")
+          span.head-desc Description Lorem ipsum dolor sit amet, consectetur
+          
+      .row.mt-sm
+        .container
+          .col-md-12
+            .row
+
+              - 
+                var data = [
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"News"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Announcement"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"Interview"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Opinions"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"News"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Announcement"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"Interview"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Opinions"
+                    }
+                ]
+
+              each val, index in data
+                .col-sm-3.course
+                  .course-img
+                    img(src=val.img)
+                  a.course-title(href="knowledge_hub_detail.php") Eaton hightlights four key questions on the risks of buying electrical products online. <span class='date'>02/08/2560</span>
+                  p.course-desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad voluptatem sint, saepe libero excepturi ex!
+                  a.readmore(href="#") <img src="assets/img/icon-readmore.png"> Readmore
+
+            .row
+              ul.pagination-list
+                <li><a href="course.php"><<</a></li>
+                <li><a href="course.php"><</a></li>
+                <li class="active"><a href="course.php">1</a></li>
+                <li><a href="course.php">2</a></li>
+                <li><a href="course.php">3</a></li>
+                <li><a href="course.php">>></a></li>
+                <li><a href="course.php">></a></li>
+
+

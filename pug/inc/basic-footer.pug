@@ -1,0 +1,69 @@
+// start pre-footer
+.container-fluid
+	.row.pre-footer
+		.container
+			.col-xs-12.footer-address
+				.container-fluid
+					.row
+						.col-xs-12.col-md-6
+							.row
+								.container-fluid
+									.row
+										.col-xs-6.text-left
+											strong.quickhead About Us
+											ul.quicklink
+												li
+													a(href="#") Quick link 1
+												li
+													a(href="#") Quick link 2
+												li
+													a(href="#") Quick link 3
+										.col-xs-6.text-left
+											strong.quickhead Contact Us
+											ul.quicklink
+												li
+													a(href="contactus.php") ติดต่อเรา
+												li
+													a(href="faq.php") คำถามที่พบบ่อย
+						.col-xs-12.col-md-6.facebookiframe.text-center
+							//
+								<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTransparentElectricityQuotes%2F&tabs=timeline&width=555&height=250&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1600529800178535" width="555" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+// end pre-footer
+
+// start footer
+footer
+	.container
+		.row
+			p.col-md-4.copyright.text-muted.small.text-left
+				| Copyright &copy; electricity.com All Rights Reserved
+			ul.col-md-8.text-right.list-inline.nav-footer
+				li.nav-item.active
+					a(href='index.php') หน้าหลัก
+				li.nav-item
+					a(href='asset.php') อสังหาฯ
+				li.nav-item
+					a(href='news.php') ข่าวสาร
+				li.nav-item
+					a(href='promotion.php') โปรโมชั่น
+				li.nav-item
+					a(href='event.php') อีเวนท์
+				li.nav-item
+					a(href='howto.php') วิธีการใช้งาน
+				li.nav-item
+					a(href='contactus.php') ติดต่อเรา
+// end footer
+
+-
+	var jsFiles = [
+		'assets/js/jquery.js',
+		'assets/js/jquery.dotdotdot.min.js',
+		'assets/js/lightGallery/js/lightgallery.min.js',
+		'assets/js/lightGallery/js/lg-thumbnail.min.js',
+		'assets/js/lightGallery/js/lg-fullscreen.min.js',
+		'assets/js/bootstrap.min.js',
+		'assets/js/global.js'
+	]
+
+each item in jsFiles
+	script(src=item)
+

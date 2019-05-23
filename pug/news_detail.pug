@@ -1,0 +1,97 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      "assets/js/owlcarousel/dist/assets/owl.carousel.min.css",
+      "assets/js/owlcarousel/dist/assets/owl.theme.default.css"
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block append script
+  -
+    var js = [
+      "assets/js/owlcarousel/dist/owl.carousel.min.js",
+      "assets/js/news.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container
+        .row.mt-sm.mb-lg
+          |
+          |
+          // start left column
+          .col-md-3
+            |
+            |
+            h4.text_head--h4.mb-sm 
+              i.fa.fa-file-text-o 
+              |  ประเภท
+            ul.sidesubmenu
+              li
+                a(href="magazine.php") นิตยสาร
+              li
+                a(href="news.php") ข่าวสาร
+              li.active
+                a(href="article.php") บทความ
+              li
+                a(href="event.php") อีเวนท์
+              li
+                a(href="promotion.php") โปรโมชั่น
+            
+          // end left column
+          |
+          |
+          |
+          // start right column
+          .col-md-9
+
+
+            .container-fluid.mb-sm
+              .row
+                .col-md-12
+                  h3.text_head--h3 โครงการบ้านเดี่ยว ศุภาลัย กาญจนาภิเษก
+                  span.text_desc--assetdesc อัพเดทล่าสุด 8 สิงหาคม 2560
+
+            .container-fluid.mb-sm
+              .row
+                .col-md-12
+                  // slideshow
+                  .owl-carousel.owl-theme
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+
+            .container-fluid
+
+              
+              .row
+                // start asset content section
+                .col-md-12
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui alias voluptatem error veritatis natus, facere, eligendi labore et velit dolor accusantium deleniti adipisci, totam voluptates architecto commodi pariatur corporis? Consequatur ab numquam dolores modi odit laudantium id, perferendis qui praesentium nam! Dolore omnis repellendus sunt rerum at nisi, laudantium tenetur neque minus facere incidunt voluptates et odit possimus, debitis libero, aspernatur quas? Totam blanditiis, est. In quo fuga aut. Eaque aliquid aperiam dignissimos fugiat, laboriosam dolores, cum eius culpa facere explicabo deleniti soluta ratione numquam at molestiae veritatis ipsum, optio autem iure, quam quod tempora officia doloribus amet maxime. Dolorum.
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat nulla, quibusdam id rem fugiat magnam. Culpa fugit voluptatem repellat nulla. At ut vero nihil, fuga reprehenderit laborum veniam, cumque praesentium ipsum quae ullam nulla, laboriosam in, alias autem! Nulla consectetur qui, laborum maiores quibusdam molestias! Quo minus, dolore velit nulla, incidunt porro consectetur error voluptas necessitatibus recusandae, ad quam nihil officia. Laboriosam, pariatur accusamus ipsum. Consequatur facilis fuga nobis, sint quidem vitae ex maxime molestiae? Perspiciatis natus quos quas molestias magni recusandae, dolor, nobis ad aliquam, vitae iste nemo. Possimus dignissimos itaque reprehenderit aliquid ducimus assumenda at omnis aut numquam inventore repellat, nesciunt sit obcaecati ut est sapiente dolores esse officiis consequatur. Consequatur asperiores placeat explicabo sed esse ad, nostrum accusamus commodi adipisci aut molestiae perspiciatis ab doloremque, neque quam possimus nulla, nesciunt praesentium! Sint rem dolorum autem illum accusantium optio, laborum eius laudantium temporibus placeat adipisci alias perferendis amet.
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima voluptatem officia pariatur, eius maiores, eaque dicta voluptas aut aliquid est deserunt ab, laboriosam. Similique nihil optio numquam praesentium neque. Illum reiciendis distinctio excepturi atque laboriosam ratione quisquam ab consectetur quas ipsam earum accusamus impedit, porro odio. Error iusto fugit aut reprehenderit, ducimus quas debitis assumenda quisquam esse inventore aliquam amet soluta maxime possimus, ipsam provident repellendus itaque vitae pariatur cum sint laboriosam quam. Nulla voluptas iste sunt dolorum saepe laborum?
+
+                // end asset content section
+                |
+                |
+              
+              
+            
+
+
+
+
+      
+

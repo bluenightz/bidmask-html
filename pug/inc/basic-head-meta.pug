@@ -1,0 +1,22 @@
+title #{siteTitle}
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width, initial-scale=1")
+meta(name="description", content=siteDesc)
+meta(name="author", content="")
+
+-
+	var headCSSFiles = [
+		'assets/css/bootstrap.min.css',
+		'assets/css/landing-page.css', 
+		'assets/css/thbanklogos.min.css', 
+		'assets/font-awesome/css/font-awesome.min.css',
+		'https://fonts.googleapis.com/css?family=Kanit:100,300,500',
+		'assets/css/global.css',
+		'assets/css/newcss.css']
+
+each item in headCSSFiles
+	link(type="text/css", rel="stylesheet", href=item)
+
+
+	

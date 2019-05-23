@@ -1,0 +1,63 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container.why
+        .row.mt-lg.mb-sm
+          .col-xs-12.text-center
+            h1.headstyle1 เข้าสู่ระบบ
+        .row.mb-sm
+          .col-md-8.col-md-offset-2.text-center
+            p.mb-sm-2 กรุณาเก็บชื่อและรหัสสำหรับเข้าบัญชี BidMask.com ไว้ในที่ปลอดภัย เว็บไซต์ BidMask.com เป็นตัวกลางในการประมูลเพียงอย่างเดียว
+        .row
+          .col-md-6.col-md-offset-3
+            .container-fluid
+              .row
+                .col-md-6
+                  <input type="text" class="basic-text form-control" id="" placeholder="ชื่อผู้ใช้">
+                .col-md-6
+                  <input type="password" class="basic-text form-control" id="" value="1234">
+              .row
+                .col-md-8.col-md-offset-1
+                  label.checkbox
+                    input(type="checkbox")
+                    span จำฉันไว้ในระบบ
+        .row.mt-sm
+          .col-xs-12.text-center
+            <a href="profile.php" type="submit" class="basic-btn btn btn-primary btn-lg"><i class="fa fa-lock"></i> เข้าสู่ระบบ</a>
+        .row.mt-xs
+          .col-xs-12.text-center.login-action
+            a(href="register.php") <i class="fa fa-user"></i> สมัครสมาชิก 
+            span | 
+            a(href="forgot_password.php") <i class="fa fa-lock"></i> ลืมรหัสผ่าน 
+        .row.mt-xs.mb-lg
+          .col-md-12.text-center.social-login
+            img(src="assets/img/btn_facebook.gif")
+            img(src="assets/img/btn_google.gif")
+
+
+
+
+
+      
+

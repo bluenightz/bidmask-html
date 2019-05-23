@@ -1,0 +1,426 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      "assets/css/radar-chart.min.css"
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block append script
+  -
+    var js = [
+      "//d3js.org/d3.v3.js",
+      "assets/js/radar-chart.js",
+      "assets/js/asset_detail.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container
+        .row.mt-sm
+          .col-xs-12
+            ul.breadcum
+              li
+                a(href="#") หน้าหลัก
+              li >
+              li
+                a(href="#") ทาวน์โฮม
+              li >
+              li
+                a(href="#") โครงการบ้านเดี่ยว ศุภาลัย กาญจนาภิเศก
+        .row.mt-xs
+          .container-fluid
+            |
+            |
+            // start qrcode section
+            .row.row-asset-name.row-underline
+
+
+              .col-md-6.col-xs-12.asset_maintitle
+                h1.text_head--h1 โครงการบ้านเดี่ยว ศุภาลัย กาญจนาภิเษก
+                .row.mt-xs.mb-sm
+                  .container-fluid
+                    .row
+                      // qrcode 1 for large screen
+                      //-
+                        .col-md-4.qrcode-1 
+                          img(src="http://placehold.it/150x150/eaeaea?text=QR_CODE")
+                      .col-md-12
+                        span.text_desc--assetdesc Code : E01247
+                          a(href="#") David MC
+                          | 18/73 กาญจนาภิเษก กรุงเทพฯ 10300
+                        span.text_desc--viewcount เข้าชมทั้งหมด 1,547 ครั้ง
+
+              .col-md-6.col-xs-12
+                .row
+                  .container-fluid
+                    .row
+                      // qrcode 2 for small screen 
+                      .col-xs-4.qrcode-2
+                        img(src="http://placehold.it/150x150/eaeaea?text=QR_CODE")
+                      .col-xs-4
+                        // for radar-chart
+                        #radar-chart.radar-chart
+                      .col-xs-4
+                        img.gold_badge(src="assets/img/gold_badge.png")
+
+
+            // end qrcode section
+        .row
+          .col-md-6
+              |
+              |
+              .row
+                .col-md-12
+                  |
+                  |
+                  // start gallery section
+                  .asset_gallery
+                    .viewer_img
+                      img(src="http://placehold.it/600x410")
+                      .btn-event-group
+                        a.btn-eventtour(href='#') EVENT TOUR
+                        a.btn-eventmatching(href='#') EVENT MATCHING
+                    .thumbnail
+                      ul
+                        - var num = 0
+                        while num < 10
+                          if num == 0
+                            li.active
+                              a(href='#')
+                                img(src="http://placehold.it/90x60/ffffff")
+                          else
+                            li
+                              a(href='#')
+                                img(src="http://placehold.it/90x60/ffffff")
+                          - ++num
+                  // end gallery section
+                  |
+                  |
+              .row
+                .col-md-12
+                  |
+                  |
+                  // start gallery action panel section
+                  ul.asset_action
+                    li
+                      a(href="#")
+                        i.fa.fa-image
+                        | ภาพทั้งหมด 4 ภาพ
+                    li
+                      a(href="#")
+                        i.fa.fa-street-view
+                        | มุมมองสตรีทวิว
+                    li
+                      a(href="#")
+                        i.fa.fa-map-marker
+                        | ดูแผนที่
+                    li
+                      a(href="#")
+                        i.fa.fa-star
+                        | บันทึกเก็บไว้
+                    li
+                      a(href="#")
+                        i.fa.fa-floppy-o
+                        | บันทึก
+                    li
+                      a(href="#")
+                        i.fa.fa-print
+                        | พิมพ์
+                    li
+                      a(href="#", class="circle--social")
+                        i.fa.fa-facebook
+                    li
+                      a(href="#", class="circle--social")
+                        i.fa.fa-google-plus
+                    li
+                      a(href="#", class="circle--social")
+                        i.fa.fa-twitter
+                  // end gallery action panel section
+                  |
+                  |
+            
+          .col-md-6
+            .container-fluid
+              .row
+                |
+                |
+                // start all asset price section
+                .col-md-4.asset__price--beginner
+                  span.text__white ราคาเริ่มต้นที่<br>
+                    span 500,000 
+                    | บาท
+                .col-md-8.asset__price--other
+                  ul
+                    li
+                      span.text__title ราคาตลาด<br>
+                        span 680,000 
+                        | บาท
+                    li
+                      span.text__title ราคาประเมิน<br>
+                        span 650,000 
+                        | บาท
+                    //-
+                      li
+                        span.text__title ราคาต่ำสุด<br>
+                          span 650,000 
+                          | บาท
+                      li
+                        span.text__title ราคาสูงสุด<br>
+                          span 680,000 
+                          | บาท
+                // end all asset price section
+              |
+              |    
+              // start auction start-end date section
+              .row.price__other
+                .col-md-12.nopadding เงินประกัน 
+                  span.text__blue 5,000 บาท
+                  span.room | 
+                  span วันประมูล
+                  span.text__blue 19/08/2560
+                  span.room |
+                  span วันสิ้นสุดการประมูล
+                  span.text__blue 21/08/2560
+                  span.room |
+                  span ราคาต่ำสุด
+                  span.text__blue 650,000
+                  span.room |
+                  span ราคาสูงสุด
+                  span.text__blue 680,000
+              // end auction start-end date section
+              |
+              |
+              // start live, online, promotion badge section
+              .row.list__badge
+                .col-md-12.nopadding
+                  .badge--live
+                    img(src="http://placehold.it/40x30")
+                    | กำลังถ่ายทอดสด
+                  .badge--online
+                    img(src="http://placehold.it/40x30")
+                    | ออนไลน์
+                  .badge--promotion
+                    img(src="http://placehold.it/40x30")
+                    | โปรโมชั่น
+              // end live, online, promotion badge section
+              |
+              |
+              // start asset price live status
+              .row.list__assetHilight
+                .col-md-12.nopadding
+                  ul
+                    li
+                      span.title เหลือเวลาอีก<br>
+                      span.content 7 วัน 
+                        span.text__xs 15:05:59
+                        i.fa.fa-clock-o
+                    li
+                      span.title ราคาประมูลตอนนี้<br>
+                      span.content.text-red 650,000 
+                        span.text__xs บาท
+                    li
+                      span.title Winner<br>
+                      span.content John Doe
+                        img(src="http://placehold.it/40x40", class="winner_image")
+              // end asset price live status
+              |
+              |
+              .row.input__group
+                |
+                |
+                // start auction button +, - 
+                .col-md-12.nopadding
+                  input(type="text", class="input__showprice", value="680,000 ฿", readonly)
+                  button(class="input__increase") + 30,000 ฿
+                  button(class="input__decrease") - 30,000 ฿
+                // end auction button +, - 
+                |
+                |
+
+              //-
+                .row.history.mt-sm
+                  |
+                  |
+                  // start bid history
+                  .col-md-12
+                    h4.title ประวัติการประมูล
+                    - var n = 0;
+                    .list__wrapper
+                      ul
+                        while n < 10
+                          li
+                            span.list__title John Doe
+                            span.list__price 
+                              span 650,00
+                                = n++ 
+                              | บาท
+                  // end bid history
+                  |
+                  |
+
+        |
+        |
+        .row.mt-xs.mb-lg
+          |
+          |
+          // start left column
+          .col-md-3
+            |
+            |
+            h4.text_head--h4.mb-sm Guru Analysis
+            // start Guru Analysis, 1 item
+            .article__side
+              img(src="http://placehold.it/320x180/ffffff")
+              a.article__link(href="#") เทคนิคการเลือกซื้อบ้านทาวน์โฮม เพื่ออนาคตที่ดีกว่า
+            // end Guru Analysis, 1 item
+            |
+            |
+            h4.text_head--h4.mb-sm Review
+            // start review, 1 item
+            .article__side
+              img(src="http://placehold.it/320x180/ffffff")
+              a.article__link(href="#") ส่องทำเลทองรถไฟฟ้าผ่าน อี 5 ปีโซนไหนน่าอยู่ที่สุด
+            // end review, 1 item
+            |
+            |
+            h4.text_head--h4.mt-sm.mb-sm เอกสารอื่นๆ
+            // start download doc, 1 item
+            .article__side--download
+              .container-fluid
+                .row
+                  .col-md-4.col-xs-3
+                    img(src="http://placehold.it/150x150/ffffff")
+                  .col-md-8.col-xs-9
+                    a.article__link(href="#") - เอกสารฉบับที่ 1
+                      i.fa.fa-download
+                    .article_detail information <br>Added: 20 Aug 2017
+            // end download doc, 1 item
+            |
+            |
+            // start download doc, 1 item
+            .article__side--download
+              .container-fluid
+                .row
+                  .col-md-4.col-xs-3
+                    img(src="http://placehold.it/150x150/ffffff")
+                  .col-md-8.col-xs-9
+                    a.article__link(href="#") - สัญญา
+                      i.fa.fa-download
+                    .article_detail information <br>Added: 20 Aug 2017
+            // end download doc, 1 item
+          // end left column
+          |
+          |
+          |
+          // start right column
+          .col-md-9
+            .container-fluid.asset__detail
+
+              // start avatar post by, asset name section
+              .row
+                // start avatar post by
+                .col-md-2.avatar
+                  .avatar-wrapper
+                    img(src="assets/img/avatar/character.png")
+                    ul.avatar-list
+                      li
+                        a(href="#") 
+                          img(src="http://placehold.it/32x32")
+                      li
+                        a(href="#") 
+                          img(src="http://placehold.it/32x32")
+                      li
+                        a(href="#") 
+                          img(src="http://placehold.it/32x32")
+                      li
+                        a(href="#") 
+                          img(src="http://placehold.it/32x32")
+                      li
+                        a(href="#") 
+                          img(src="http://placehold.it/32x32")
+                      li
+                        a(href="#") 
+                          img(src="http://placehold.it/32x32")
+                  span.avatar__title โพสโดย
+                    a(href="#") Dave Falcon
+                // end avatar post by
+                .col-md-10.assetdesc-wrapper
+                  h3.text_head--h3 โครงการบ้านเดี่ยว ศุภาลัย กาญจนาภิเษก
+                  span.text_desc--assetdesc 18/73 กาญจนาภิเษก กรุงเทพฯ 10300 อัพเดทล่าสุด 8 สิงหาคม 2560
+                  
+                  // start asset tag section
+                  ul.asset_tag_list
+                    li
+                      a(href="#") รถไฟใต้ดิน
+                    li
+                      a(href="#") รถไฟฟ้า
+                    li
+                      a(href="#") ทางด่วน
+                    li.asset_tag--warning
+                      a(href="#") มีผู้อยู่อาศัยห้ามรบกวน
+                  // end asset tag section
+              // end avatar post by, asset name section
+              .row.mt-xs.mb-sm.asset_bg_hilight
+                .col-md-12
+                  |
+                  |
+                  // start asset option 1
+                  h4.text_head--h4 รายละเอียด
+                  ul.asset_option_list.mb-sm-2
+                    li บ้านเดี่ยว
+                    li จำนวนชั้น 2 ชั้น
+                    li 63.4 ตารางวา
+                    li 4 ห้องนอน
+                    li 2 ที่จอดรถ
+                  |
+                  |
+                  // start asset option 2
+                  h4.text_head--h4 เงื่อนไข
+                  ul.asset_option_list.mb-sm-2
+                    li ขายสด 
+                    li ค่าธรรมเนียมในการโอน คนละครึ่ง 
+                    li ค่าภาษีรายได้ฯ คนละครึ่ง
+                  |
+                  |
+                  // start furniture section
+                  h4.text_head--h4 สิ่งอำนวยความสะดวก
+                  ul.asset_furniture_list
+                    li
+                      img(src="http://placehold.it/50x50")
+                    li
+                      img(src="http://placehold.it/50x50")
+                    li
+                      img(src="http://placehold.it/50x50")
+                    li
+                      img(src="http://placehold.it/50x50")
+                    li
+                      img(src="http://placehold.it/50x50")
+                  // end furniture section
+              .row
+                // start asset content section
+                .col-md-12.asset__content
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui alias voluptatem error veritatis natus, facere, eligendi labore et velit dolor accusantium deleniti adipisci, totam voluptates architecto commodi pariatur corporis? Consequatur ab numquam dolores modi odit laudantium id, perferendis qui praesentium nam! Dolore omnis repellendus sunt rerum at nisi, laudantium tenetur neque minus facere incidunt voluptates et odit possimus, debitis libero, aspernatur quas? Totam blanditiis, est. In quo fuga aut. Eaque aliquid aperiam dignissimos fugiat, laboriosam dolores, cum eius culpa facere explicabo deleniti soluta ratione numquam at molestiae veritatis ipsum, optio autem iure, quam quod tempora officia doloribus amet maxime. Dolorum.
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat nulla, quibusdam id rem fugiat magnam. Culpa fugit voluptatem repellat nulla. At ut vero nihil, fuga reprehenderit laborum veniam, cumque praesentium ipsum quae ullam nulla, laboriosam in, alias autem! Nulla consectetur qui, laborum maiores quibusdam molestias! Quo minus, dolore velit nulla, incidunt porro consectetur error voluptas necessitatibus recusandae, ad quam nihil officia. Laboriosam, pariatur accusamus ipsum. Consequatur facilis fuga nobis, sint quidem vitae ex maxime molestiae? Perspiciatis natus quos quas molestias magni recusandae, dolor, nobis ad aliquam, vitae iste nemo. Possimus dignissimos itaque reprehenderit aliquid ducimus assumenda at omnis aut numquam inventore repellat, nesciunt sit obcaecati ut est sapiente dolores esse officiis consequatur. Consequatur asperiores placeat explicabo sed esse ad, nostrum accusamus commodi adipisci aut molestiae perspiciatis ab doloremque, neque quam possimus nulla, nesciunt praesentium! Sint rem dolorum autem illum accusantium optio, laborum eius laudantium temporibus placeat adipisci alias perferendis amet.
+
+                // end asset content section
+                |
+                |
+          // end right column
+          |
+          |
+            
+
+
+
+
+      
+

@@ -1,0 +1,70 @@
+extends /template/basic-slider-article.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  
+  .intro-header
+    .container-fluid
+      .row
+        .mainslide
+          .col-lg-12.bg-head
+            .row
+              .col-md-6.col-md-offset-6.col-xs-12
+  .container-fluid.bggreen
+    .row
+      .container
+        .row.howto.mt-sm
+          .col-md-5.mobile-wrapper
+            img(src="assets/img/mobile.png", class="mobile")
+          .col-md-7
+            h2.mb-sm BidMask.com <span>บริการประมูลอสังหาริมทรัพย์ออนไลน์มีขั้นตอนอย่างไร?
+            ul.howto-list.row
+              li.arrow.col-xs-4
+                img(src="assets/img/howto-icon1.png", class="howto-img")
+                span 1. เลือกอสังหาฯ ที่ถูกใจและทำการประมูล
+              li.arrow.col-xs-4
+                img(src="assets/img/howto-icon2.png", class="howto-img")
+                span 2. เข้าร่วมการประมูล และดูยอดประมูลแบบเรียลไทม์
+              li.col-xs-4
+                img(src="assets/img/howto-icon3.png", class="howto-img")
+                span 3. ครบเวลาที่กำหนดเป็นผู้ชนะการประมูล
+            .row
+              .col-md-12.text-right.howto-action
+                a.btn.btn-white-outline <i class="fa fa-play"></i> ตัวอย่างการใช้งาน
+                a.btn.btn-white-outline เริ่มใช้งาน
+  .container-fluid.bgwhite
+    .row
+      .container.why
+        .row.mt-lg.mb-sm
+          .col-xs-12.text-center
+            img(src="assets/img/head-why.png", alt="ทำไมต้องประมูลออนไลน์")
+        .row.mb-sm-2
+          .col-md-8.col-md-offset-2.text-center
+            p.mb-sm-2 ปัจจุบันเทคโนโลยีการสื่อสารไร้พรมแดน ได้เข้ามาเป็นส่วนนึงในชีวิตประจำวันของทุกคน รวมทั้งโทรศัพท์มือถือ, แทปเล็ต และอินเตอร์เน็ต
+            p การเข้าถึงอินเตอร์เน็ตได้ทุกที่มีส่วนทำให้ได้รับความสะดวกจากบริการต่างๆ อย่างมาก การประมูลออนไลน์จึงเป็นการนำเทคโนโลยีการสื่อสารมาใช้ให้เกิดประโยชน์ ไม่จำเป็นจะต้องอยู่ในห้องประมูลตลอดเวลา เพียงแค่มีอินเตอร์เน็ตคุณก็สามารถเข้าร่วมประมูลได้จากทุกๆที่
+        .row.mt-sm.mb-lg
+          .col-xs-12.text-center
+            <a href="#" type="submit" class="basic-btn btn btn-primary btn-lg">ดูอสังหาฯ ที่ร่วมประมูลทั้งหมด</a>
+
+
+
+      
+

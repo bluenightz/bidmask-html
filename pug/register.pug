@@ -1,0 +1,115 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container.why
+        .row.mt-lg.mb-sm
+          .col-xs-12.text-center
+            h1.headstyle1 สมัครสมาชิก 
+        .row.mb-sm
+          .col-md-8.col-md-offset-2.text-center
+            p.mb-sm-2 กรุณากรอกข้อมูลที่จำเป็นให้ครบถ้วนเพื่อประโยชน์ของตัวท่านเอง 
+              i.fa.fa-question-circle.text-xs
+        .row
+          .col-md-6.col-md-offset-3
+            .container-fluid.basic-form
+              .row.basic-form-row
+                label.col-md-4.form-label ชื่อจริง
+                .col-md-8
+                  <input type="text" class="basic-text form-control" id="" >
+              .row.basic-form-row
+                label.col-md-4.form-label นามสกุล
+                .col-md-8
+                  <input type="text" class="basic-text form-control" id="" >
+              .row.basic-form-row
+                label.col-md-4.form-label อีเมล
+                .col-md-8
+                  <input type="text" class="basic-text form-control" id="" >
+              .row.basic-form-row
+                label.col-md-4.form-label รหัสผ่าน
+                .col-md-8
+                  <input type="password" class="basic-text form-control" id="" >
+              .row.basic-form-row
+                label.col-md-4.form-label ยืนยันรหัสผ่าน
+                .col-md-8
+                  <input type="password" class="basic-text form-control" id="" >
+
+              //-
+                .row.basic-form-row
+                  label.col-md-3.form-label วันเกิด
+                  .col-md-3
+                      <select name="select-type" id="select-type" class="basic-select form-control">
+                        <option value="">วัน</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                      </select>
+                  .col-md-3
+                      <select name="select-type" id="select-type" class="basic-select form-control">
+                        <option value="">เดือน</option>
+                        <option value="">มกราคม</option>
+                        <option value="">กุมภาพันธ์</option>
+                      </select>
+                  .col-md-3
+                      <select name="select-type" id="select-type" class="basic-select form-control">
+                        <option value="">ปี</option>
+                        <option value="">2017</option>
+                        <option value="">2016</option>
+                      </select>
+                .row.basic-form-row
+                  label.col-md-3.form-label ที่อยู่
+                  .col-md-9
+                    <textarea type="text" class="basic-text form-control" id="" ></textarea>
+                .row.basic-form-row
+                  label.col-md-3.form-label จังหวัด
+                  .col-md-9
+                      <select name="select-type" id="select-type" class="basic-select form-control">
+                        <option value="">จังหวัด</option>
+                        <option value="">กรุงเทพมหานคร</option>
+                      </select>
+                .row.basic-form-row
+                  label.col-md-3.form-label เขต
+                  .col-md-9
+                      <select name="select-type" id="select-type" class="basic-select form-control">
+                        <option value="">เขต</option>
+                        <option value="">ดุสิต</option>
+                      </select>
+                .row.basic-form-row
+                  label.col-md-3.form-label แขวง
+                  .col-md-9
+                      <select name="select-type" id="select-type" class="basic-select form-control">
+                        <option value="">แขวง</option>
+                        <option value="">วชิรพยาบาล</option>
+                      </select>
+
+        .row.mt-sm.mb-lg
+          .col-xs-12.text-center
+            <a href="#" type="submit" class="basic-btn btn btn-primary btn-lg">สมัครสมาชิก</a>
+        .row.mt-xs.mb-lg
+          .col-md-12.text-center.social-login
+            img(src="assets/img/btn_facebook.gif")
+            img(src="assets/img/btn_google.gif")
+
+
+
+      
+

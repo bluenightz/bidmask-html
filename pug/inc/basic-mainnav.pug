@@ -1,0 +1,39 @@
+nav.nav-main.navbar.navbar-default.navbar-fixed-top.topnav
+	.container-fluid.topnav
+		.navbar-header
+			button(type="buton"
+				class="navbar-toggle"
+				data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1"
+			)
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+
+		.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+			ul.nav.navbar-nav
+				li.nav-item
+					a(href='index.php') HOME
+				li.nav-item
+					a(href='course.php') COURSE
+				li.nav-item
+					a(href='knowledge.php') KNOWLEDGE
+				li.nav-item
+					a(href='#') FAQ
+				li.nav-item
+					a(href='#') GALLERY
+				li.nav-item
+					a(href='#') TESTIMONIAL
+				li.nav-item.nav-search-text
+					a(href='#', data-toggle="modal", data-target="#searchModal") SEARCH
+				li.nav-item
+					a(href='#') CONTACT
+				li.nav-item.nav-telephone
+					i.icon-phone.fa.fa-phone
+					span 02-276-5260<br>08-9665-3599
+				li.nav-item.nav-search
+					input(type="text", placeholder="ค้นหาคอร์ส")
+					button.btn-search(onclick="window.location.href='search-result.php'")
+						i.fa.fa-search
+

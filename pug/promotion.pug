@@ -1,0 +1,139 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      "assets/js/owlcarousel/dist/assets/owl.carousel.min.css",
+      "assets/js/owlcarousel/dist/assets/owl.theme.default.css"
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block append script
+  -
+    var js = [
+      "assets/js/owlcarousel/dist/owl.carousel.min.js",
+      "assets/js/news.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container
+        .row.mt-sm.mb-lg
+          |
+          |
+          // start left column
+          .col-md-3
+            |
+            |
+            h4.text_head--h4.mb-sm 
+              i.fa.fa-file-text-o 
+              |  ประเภท
+            ul.sidesubmenu
+              li
+                a(href="magazine.php") นิตยสาร
+              li
+                a(href="news.php") ข่าวสาร
+              li
+                a(href="article.php") บทความ
+              li
+                a(href="event.php") อีเวนท์
+              li.active
+                a(href="promotion.php") โปรโมชั่น
+          // end left column
+          |
+          |
+          |
+          // start right column
+          .col-md-9
+            .container-fluid
+              .row
+                .col-md-12
+                  // slideshow
+                  .owl-carousel.owl-theme
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+                    div
+                      img(src="http://placehold.it/800x450/EAEAEA?text=slideshow_800x450")
+              
+              .row.form.form-horizontal.mt-sm
+                // start filter section
+                .col-md-3
+                  h4.text_head--h4.mb-sm 
+                    |  โปรโมชั่น
+                .col-md-4.text-right
+                  .form-group
+                      label.col-md-12.control-label ค้นหาจาก
+                .col-md-2
+                  input(type="text", class="form-control")
+                .col-md-1.text-center 
+                  .form-group
+                    label.control-label ถึง
+                .col-md-2
+                  input(type="text", class="form-control")
+
+              .row
+                .col-md-12
+                  table.table.table-striped.table-hover
+                    col(width="20%")
+                    col(width="25%")
+                    col(width="")
+                    col(width="20%")
+                    thead
+                      tr
+                        th ภาพโปรโมชั่น
+                        th วันที่
+                        th โปรโมชั่น
+                        th &nbsp;
+                    tbody
+                      - var n = 0
+                      while n < 10
+                        // start news, 1 item
+                        tr
+                          td
+                            img(src="assets/img/img-test.jpg")
+                          td 18/09/60 - 20/09/60
+                          td 
+                            a(href="news_detail.php") ซื้อบัตรเข้าประมูล 2 ฟรี 1 คลิกเลย
+                          td
+                            a(href="news_detail.php") 
+                              i.fa.fa-comment-o  
+                              |  อ่านรายละเอียด
+                        // end news, 1 item
+                        - n++
+              |
+              |
+              .row.mb-lg
+                |
+                |
+                // start pagination section
+                ul.pagination-list
+                  <li><a href="#"><<</a></li>
+                  <li><a href="#"><</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">>></a></li>
+                  <li><a href="#">></a></li>
+                // end pagination section
+                |
+                |
+
+          // end right column
+          |
+          |
+            
+
+
+
+
+      
+

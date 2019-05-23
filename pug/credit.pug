@@ -1,0 +1,129 @@
+extends /template/basic-login.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+      
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block prepend script
+  -
+    var js = [
+      "assets/js/profile.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid
+    .row
+      include inc/user-nav.pug
+    .row
+      .container
+        .row.mb-lg.mt-xs
+          .col-md-3
+            .container-fluid.mb-sm
+              .row
+                .col-xs-6.textstyle-1 
+                  i.fa.fa-usd   
+                  | วงเงิน
+                .col-xs-6.nopadr
+                  .basic-bar(data-bar="10000000", data-bar-max="20000000")
+                .col-xs-12.nopadr.text-right 10 K / 20 M
+              .row.mt-xs-2
+                .col-xs-6.textstyle-1 
+                  i.fa.fa-usd 
+                  | เงินประกัน
+                .col-xs-6.nopadr.text-right 10,000 บาท
+            ul.sidesubmenu
+              li
+                a(href="profile.php") Profile
+              li
+                a(href="change_password.php") Change Password
+              li.active
+                a(href="credit.php") Credit
+          .col-md-9
+              .container-fluid
+                .row
+                  .col-xs-12
+                    h4.text_head--h4 รายละเอียดการเงิน
+
+                .row
+                  .col-xs-12.asset__price--other.noborder
+                    ul.ml-xs
+                      li
+                        span.text__title วงเงินที่ได้<br>
+                          span 1,000,000 
+                          | บาท
+                      li
+                        span.text__title ยอดเงินที่ใช้<br>
+                          span 200,000 
+                          | บาท
+                      li
+                        span.text__title เงินประกัน<br>
+                          span 200,000 
+                          | บาท
+                      li
+                        span.text__title เครดิต<br>
+                          span 1,000,000 
+                          | บาท
+
+                .divide-line.mt-sm
+
+                .row.mt-sm
+                  .col-xs-12
+                    h4.text_head--h4 ขั้นตอนการชำระเงิน
+
+                form.form.form-horizontal
+                  h5.text_head--h5 1. เลือกธนาคาร
+                  .row
+                      .banklist.ml-xs
+                        .form-group
+                          label.col-xs-12.radio-line
+                            input(type="radio")
+                            i(class="thbanks thbanks-kbank" aria-hidden="true")
+                            span ธนาคารกสิกร เลขที่บัญชี 095-2-17170-6
+                        .form-group
+                          label.col-xs-12.radio-line
+                            input(type="radio")
+                            i(class="thbanks thbanks-ktb" aria-hidden="true")
+                            span ธนาคารกรุงไทย เลขที่บัญชี 597-0-01103-7
+                        .form-group
+                          label.col-xs-12.radio-line
+                            input(type="radio")
+                            i(class="thbanks thbanks-bbl" aria-hidden="true")
+                            span ธนาคารกรุงเทพ เลขที่บัญชี 232-4-06934-9
+
+                  h5.text_head--h5.mt-sm 2. เลือกรูป (สลิป)
+                  .row
+                    .form-group
+                      label.control-label.col-sm-3 ภาพสลิป
+                      .col-sm-4.col-xs-12
+                        input(type="file", class="form-control")
+                    .form-group
+                      label.control-label.col-sm-3 วันเวลาที่โอน
+                      .col-sm-4.col-xs-12
+                        input(type="text", class="form-control")
+                    .form-group
+                      label.control-label.col-sm-3 ธนาคารต้นทาง
+                      .col-sm-4.col-xs-12
+                        select.form-control
+                          option ---เลือกธนาคาร---
+                          option กสิกรไทย
+                          option ไทยพาณิชย์
+
+
+
+
+
+                .row.mt-xs
+                  .form-group.col-sm-12
+                    .col-xs-12.text-right
+                      <a href="#" type="submit" class="basic-btn btn btn-primary">บันทึก</a>
+
+

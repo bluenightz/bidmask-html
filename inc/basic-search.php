@@ -1,0 +1,309 @@
+
+
+
+<!-- start search section-->
+<div class="container search-wrapper">
+  <div class="row">
+    <div class="col-xs-12 text-center mt-sm mb-xs"><img src="assets/img/intro-head-2.gif" alt="สู่รูปแบบใหม่ของการประมูลอสังหาริมทรัพย์"/></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center"><a href="#"><img src="http://placehold.it/1140x475"/></a></div>
+  </div>
+  <div class="search-box">
+    <div class="row">
+      <div class="col-xs-12">
+        <div role="tabpanel">
+<ul class="nav nav-tabs" role="tablist">
+<li role="presentation" class="active">
+<a href="#location" aria-controls="location" role="tab" data-toggle="tab">ค้นหาตามสถานที่</a>
+</li>
+<li role="presentation">
+<a href="#bts" aria-controls="bts" role="tab" data-toggle="tab">ค้นหาตามรถไฟฟ้า BTS</a>
+</li>
+<li role="presentation">
+<a href="#mrt" aria-controls="mrt" role="tab" data-toggle="tab">ค้นหาตามรถไฟฟ้า MRT</a>
+</li>
+</ul>
+<form action="" method="POST" role="form" class="form form-horizontal">
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="location">
+<div class="form-group search-content">
+<div class="col-md-6 col-md-offset-3">
+<input type="text" class="basic-text form-control" id="" placeholder="ใส่ชื่อเขต, ตำบล, จังหวัดที่ต้องการค้นหา">
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane" id="bts">
+        
+        <!-- start search bts1 sukhumvit section--><div class="railmap bts1">
+        <h4 class="railmapname text_head--h4">สายสุขุมวิท</h4><ul class="list">
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-1">
+<label class="station-name" for="station-1"><span>หมอชิต</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-2">
+<label class="station-name" for="station-2"><span>สะพานควาย</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-3">
+<label class="station-name" for="station-3"><span>อารีย์</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-4">
+<label class="station-name" for="station-4"><span>สนามเป้า</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-5">
+<label class="station-name" for="station-5"><span>อนุสาวรีย์ชัยฯ</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-6">
+<label class="station-name" for="station-6"><span>ราชเทวี</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-7">
+<label class="station-name" for="station-7"><span>สยาม</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-8">
+<label class="station-name" for="station-8"><span>ชิดลม</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-9">
+<label class="station-name" for="station-9"><span>เพลินจิต</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-10">
+<label class="station-name" for="station-10"><span>นานา</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-11">
+<label class="station-name" for="station-11"><span>อโศก</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-12">
+<label class="station-name" for="station-12"><span>พร้อมพงษ์</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-13">
+<label class="station-name" for="station-13"><span>ทองหล่อ</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-14">
+<label class="station-name" for="station-14"><span>เอกมัย</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-15">
+<label class="station-name" for="station-15"><span>พระโขนง</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-16">
+<label class="station-name" for="station-16"><span>อ่อนนุช</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-17">
+<label class="station-name" for="station-17"><span>บางจาก</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-18">
+<label class="station-name" for="station-18"><span>ปุณณวิถี</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-18">
+<label class="station-name" for="station-18"><span>อุดมสุข</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-18">
+<label class="station-name" for="station-18"><span>บางนา</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-18">
+<label class="station-name" for="station-18"><span>แบริ่ง</span></label>
+</li>
+</ul>
+<span class="interchange"></span>
+</div>
+        <!-- end search bts1 sukhumvit section-->
+        
+        <!-- start search bts2 silom section--><div class="railmap bts2">
+        <h4 class="railmapname text_head--h4">สายสีลม</h4><ul class="list">
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-19">
+<label class="station-name" for="station-19"><span>สนามกีฬาแห่งชาติ</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-20">
+<label class="station-name" for="station-20"><span>สยาม</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-21">
+<label class="station-name" for="station-21"><span>ราชดำริ</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-22">
+<label class="station-name" for="station-22"><span>ศาลาแดง</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-23">
+<label class="station-name" for="station-23"><span>ช่องนนทรีย์</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-24">
+<label class="station-name" for="station-24"><span>สุรศักดิ์</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-25">
+<label class="station-name" for="station-25"><span>สะพานตากสิน</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-26">
+<label class="station-name" for="station-26"><span>กรุงธนบุรี</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-27">
+<label class="station-name" for="station-27"><span>วงเวียนใหญ่</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-28">
+<label class="station-name" for="station-28"><span>โพธิ์นิมิตร</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-29">
+<label class="station-name" for="station-29"><span>ตลาดพูล</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-30">
+<label class="station-name" for="station-30"><span>วุฒากาศ</span></label>
+</li>
+<li>
+<input class="basic-checkbox" type="checkbox" name="station[]" id="station-31">
+<label class="station-name" for="station-31"><span>บางหว้า</span></label>
+</li>
+</ul>
+</div>
+</div>
+        <!-- end search bts2 silom section-->
+        
+        <!-- search mrt section--><div role="tabpanel" class="tab-pane" id="mrt">
+<div class="railmap mrt">
+<ul class="list">
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-32">
+<label for="" class="station-name" for="station-32"><span>บางซื่อ</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-33">
+<label for="" class="station-name" for="station-33"><span>กำแพงเพชร</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-34">
+<label for="" class="station-name" for="station-34"><span>สวนจตุจักร</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-35">
+<label for="" class="station-name" for="station-35"><span>พหลโยธิน</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-36">
+<label for="" class="station-name" for="station-36"><span>ลาดพร้าว</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-37">
+<label for="" class="station-name" for="station-37"><span>รัชดาภิเษก</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-38">
+<label for="" class="station-name" for="station-38"><span>สุทธิสาร</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-39">
+<label for="" class="station-name" for="station-39"><span>ห้วยขวาง</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-40">
+<label for="" class="station-name" for="station-40"><span>ศูนย์วัฒนธรรม</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-41">
+<label for="" class="station-name" for="station-41"><span>พระราม 9</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-42">
+<label for="" class="station-name" for="station-42"><span>เพชรบุรี</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-43">
+<label for="" class="station-name" for="station-43"><span>สุขุมวิท</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-44">
+<label for="" class="station-name" for="station-44"><span>ศูนย์การประชุมแห่งชาติสิริกิติ์</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-45">
+<label for="" class="station-name" for="station-45"><span>คลองเตย</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-47">
+<label for="" class="station-name" for="station-47"><span>ลุมพินี</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-48">
+<label for="" class="station-name" for="station-48"><span>สีลม</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-49">
+<label for="" class="station-name" for="station-49"><span>สามย่าน</span></label>
+</li>
+<li>
+<input type="checkbox" name="" id="" class="basic-checkbox" name="station[]" id="station-50">
+<label for="" class="station-name" for="station-50"><span>หัวลำโพง</span></label>
+</li>
+</ul>
+</div>
+</div>
+        
+        <!-- start search-filter--><div class="search-filter">
+<div class="form-group">
+<div class="filter-wrapper col-md-2 ml33">
+<select name="select-type" id="select-type" class="basic-select form-control">
+<option value="">บ้านเดี่ยว</option>
+<option value="">ทาวน์โฮม</option>
+<option value="">คอนโด</option>
+</select>
+</div>	
+<div class="filter-wrapper col-md-2">
+<select name="select-type" id="select-type" class="basic-select form-control">
+<option value="">ห้องนอน</option>
+<option value="">1</option>
+<option value="">2</option>
+</select>
+</div>
+<div class="filter-wrapper col-md-2">
+<select name="select-type" id="select-type" class="basic-select form-control">
+<option value="">ห้องน้ำ</option>
+<option value="">1</option>
+<option value="">2</option>
+</select>
+</div>
+<div class="filter-wrapper col-md-2">
+<input type="text" class="basic-text form-control" id="" placeholder="ราคาขั้นต่ำ">
+</div>	
+<div class="filter-wrapper col-md-2">
+<input type="text" class="basic-text form-control" id="" placeholder="ราคาขั้นสูง">
+</div>	
+<div class="filter-wrapper col-md-1 btn-search-wrapper">
+<button type="submit" class="basic-btn btn btn-primary"><i class="fa fa-search"></i> ค้นหา</button>
+</div>
+</div>
+</div>
+        <!-- end search-filter-->
+        </div>
+</form>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end search section-->

@@ -1,0 +1,162 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block append script
+  -
+    var js = [
+
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container
+        .row.mt-sm
+          .col-xs-12
+            ul.breadcum
+              li
+                a(href="#") หน้าหลัก
+              li >
+              li
+                a(href="#") อีเวนท์
+              li >
+              li
+                a(href="#") โครงการบ้านเดี่ยวตามแนว BTS
+        .row.mt-xs
+          .col-md-5.mb-sm
+            .container-fluid                  
+              |
+              |
+              .row
+                .col-md-12
+                  |
+                  |
+                  // start image,video section
+                  .asset_gallery
+                    .viewer_img
+                      img(src="http://placehold.it/600x410")
+                      .btn-event-group
+                        a.btn-eventtour(href='#') 
+                          i.fa.fa-image 
+                          |  รูปภาพ
+                        a.btn-eventmatching(href='#')
+                          i.fa.fa-play 
+                          |  วีดีโอ
+                  // end image,video section
+                  |
+                  |
+              
+          .col-md-7
+            .container-fluid
+              .row.row-underline
+                .col-md-12
+                  h1.text_head--h1 โครงการบ้านเดี่ยวตามแนว BTS
+                    i.fa.fa-star-o.pull-right.icon-favourite
+              .row
+                // start asset content section
+                .col-md-12
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui alias voluptatem error veritatis natus, facere, eligendi labore et velit dolor accusantium deleniti adipisci, totam voluptates architecto commodi pariatur corporis? Consequatur ab numquam dolores modi odit laudantium id, perferendis qui praesentium nam! Dolore omnis repellendus sunt rerum at nisi, laudantium tenetur neque minus facere incidunt
+              .row.list__assetHilight.mt-xs
+                .col-md-12
+                  ul
+                    li
+                      span.title วันที่จัดงาน<br>
+                      span.content 25/09/60
+                    li
+                      span.title ราคาบัตรเข้าร่วม<br>
+                      span.content.text-red 1,000 
+                        span.text__xs บาท
+                    li
+                      span.title เงินประกันการประมูล<br>
+                      span.content.text-red 3,000 
+                        span.text__xs บาท
+                    li.no-underline
+                      .input__group
+                        button(class="input__increase")
+                          i.fa.fa-shopping-cart  
+                          |  ซื้อบัตรร่วมงาน
+        
+        .row.mt-sm
+          .col-md-12
+              - 
+                var data = [
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"News"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Announcement"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"Interview"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Opinions"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"News"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Announcement"
+                    },
+                  {
+                    "img":"assets/img/img-test.jpg",
+                    "class":"",
+                    "title":"Interview"
+                    },
+                  {
+                    "img":"assets/img/img-test2.jpg",
+                    "class":"",
+                    "title":"Opinions"
+                    }
+                ]
+
+              each val, index in data
+                |
+                |
+                // start asset, 1 item
+                .col-sm-3.course
+                  .course-img
+                    img(src=val.img)
+                    span.course-fav
+                      i.fa.fa-star
+                  a.course-title(href="#") โครงการบ้านเดี่ยว ศุภาลัย กาญจนาภิเษก
+                  .course-date วันที่เริ่มต้น 25/06/60 - วันที่สิ้นสุด 30/08/60
+                  .container-fluid
+                    .row.row-price
+                      .col-xs-6.course-price ราคาเริ่มต้น <br><span>3,000</span> บาท
+                      .col-xs-6.course-price ราคาประเมิน <br><span>4,000</span> บาท
+                    .row
+                      .col-xs-12.course-price.text-red-2 ราคาประมูลตอนนี้ <br><span>12,3000,000</span> บาท
+                // end asset, 1 item
+                |
+                |        
+              
+
+
+
+
+      
+

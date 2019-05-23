@@ -1,0 +1,61 @@
+.container.z99.bgnav
+	// start top menu
+	nav.nav-main.navbar.navbar-default.topnav
+		.container-fluid.topnav
+			.row
+				.navbar-header
+					button(type="buton"
+						class="navbar-toggle"
+						data-toggle="collapse"
+						data-target="#bs-example-navbar-collapse-1"
+					)
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+
+				.col-lg-2.text-left.logo-wrapper
+					a(href='index.php', class="head-logo")
+						img(src="assets/img/logo.png")
+				.col-lg-10.col-xs-12
+					.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+						.row.ptb10
+							.text-right.nav-wrapper
+								ul.nav.navbar-nav.nav-mobile
+									li.nav-item.active
+										a(href='index.php') หน้าหลัก
+									// start dropdown
+									li.nav-item.dropdown 
+										a.dropdown-toggle(href='asset.php', data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false") อสังหาฯ
+											span.caret
+										ul.dropdown-menu.nav
+											li.nav-item
+												a(href="#") sub menu 1
+											li.nav-item
+												a(href="#") sub menu 2
+											li.nav-item
+												a(href="#") sub menu 3
+									// end dropdown
+
+									li.nav-item
+										a(href='news.php') ข่าวสาร
+									li.nav-item
+										a(href='promotion.php') โปรโมชั่น
+									li.nav-item
+										a(href='event.php') อีเวนท์
+									li.nav-item
+										a(href='howto.php') วิธีการใช้งาน
+									li.nav-item
+										a(href='contactus.php') ติดต่อเรา
+
+									li.nav-item
+										a(href='register.php')
+											i.icon-phone.fa.fa-user 
+											span Sign up
+									li.nav-item
+										a(href='login.php')
+											i.icon-phone.fa.fa-lock 
+											span Log in
+	// end top menu
+									
+

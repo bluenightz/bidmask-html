@@ -1,0 +1,131 @@
+extends /template/basic-course.pug
+
+//- css headmeta
+block append headCSS
+  -
+    var css = [
+    ]
+  each item in css
+    link(type="text/css", rel="stylesheet", href=item)
+
+//- js footer
+block append script
+  -
+    var js = [
+      "assets/js/eventmatching.js"
+    ]
+  each item in js
+    script(src=item)
+
+
+block prepend content
+  .container-fluid.bgwhite
+    .row
+      .container
+        .row.mt-sm
+          .col-xs-12
+            ul.breadcum
+              li
+                a(href="#") หน้าหลัก
+              li >
+              li
+                a(href="#") อีเวนท์
+              li >
+              li
+                a(href="#") จองบูทเมืองทองธานี
+        .row.mt-xs
+          .col-md-5.mb-sm
+            .container-fluid                  
+              |
+              |
+              .row
+                .col-md-12
+                  |
+                  |
+                  // start image,video section
+                  .asset_gallery
+                    .viewer_img
+                      img(src="http://placehold.it/600x410")
+                      .btn-event-group
+                        a.btn-eventtour(href='#') 
+                          i.fa.fa-image 
+                          |  รูปภาพ
+                        a.btn-eventmatching(href='#')
+                          i.fa.fa-play 
+                          |  วีดีโอ
+                  // end image,video section
+                  |
+                  |
+              
+          .col-md-7
+            .container-fluid
+              .row.row-underline
+                .col-md-12
+                  h1.text_head--h1 จองบูทเมืองทองธานี
+                    i.fa.fa-star-o.pull-right.icon-favourite
+              .row
+                // start asset content section
+                .col-md-12
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui alias voluptatem error veritatis natus, facere, eligendi labore et velit dolor accusantium deleniti adipisci, totam voluptates architecto commodi pariatur corporis? Consequatur ab numquam dolores modi odit laudantium id, perferendis qui praesentium nam! Dolore omnis repellendus sunt rerum at nisi, laudantium tenetur neque minus facere incidunt
+              .row.mt-xs
+                .col-md-12
+                  h4.text_head--h4 รูปผังบูท
+              .row
+                .col-md-12.text-center
+                  img(src="http://placehold.it/600x350")
+              .row.mt-xs
+                .col-md-12
+                  h4.text_head--h4 ตำแหน่งบูทที่จอง
+              .row
+                .col-md-12
+                  .booth__list
+                    ul
+                      - var n = 0
+                        while n <= 7
+                          if n == 1 || n == 5
+                            li.disabled
+                              label
+                                input(type="checkbox", checked, readonly, disabled, value="A"+n)
+                                span A
+                                  = n
+                          else
+                            li
+                              label
+                                input(type="checkbox", value="A"+n) 
+                                span  A
+                                  = n
+                          - n++
+              .row.mb-lg.mt-xs
+                .col-md-12.text-center
+                  a(href="#booking-modal", class="input__increase", data-toggle="modal") จองบูทที่เลือก
+
+  // confirm popup box
+  #booking-modal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type="button", data-dismiss="modal", aria-hidden="true") &times;
+          h4.modal-title จองบูท
+        .modal-body
+          .container-fluid
+            .row
+              .form.form-horizontal
+                .form-group
+                  label.control-label.col-md-4.text-right ชื่อ
+                  .col-md-8.form-control-static นามสกุล
+                .form-group
+                  label.control-label.col-md-4.text-right ตำแหน่งที่เลือก
+                  .col-md-8.form-control-static A2, A4, A7
+                .form-group
+                  label.control-label.col-md-4.text-right วันที่จัดงาน
+                  .col-md-8.form-control-static 25/09/60
+                .form-group
+                  label.control-label.col-md-4.text-right ค่าจองบูท
+                  .col-md-8.form-control-static 1,0000 บาท
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal", aria-hidden="true") ปิด
+          button.btn.btn-primary(type="button") ชำระเงิน
+
+
+      
+

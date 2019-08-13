@@ -48,4 +48,6 @@ gulp.task('watch', function(){
   gulp.watch('assets/sass/**/*.scss', ['sass']);
   gulp.watch(['pug/**/*.pug', 'pug/**/*.json'], ['pug']);
 });
+
+gulp.task('build', ['sass', 'pug']);
  
